@@ -1,0 +1,31 @@
+//variables
+$black: #2c363f;
+$white: #fefefe;
+$green: #5dab92;
+
+html {
+  font-size: 62.5%; /*ベースを16px⇒10pxに出来た*/
+}
+// header {
+//   margin: 0 auto;
+//   font-size: 1.6rem;
+
+//   @include breakpoint(tablet) {
+//     width: 100%;
+//   }
+// }
+
+//base
+
+// //img
+// #article {
+//   background-color: $black;
+// }
+//mixin レスポンシブ対応
+// @mixin breakpoint($point) {
+//   @if $point==tablet {
+//     @media (max-width: 768px) {
+//       @content;
+//     }
+//   }
+// }
