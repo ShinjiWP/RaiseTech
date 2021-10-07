@@ -1,6 +1,36 @@
 @charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%;
   /*ベースを16px⇒10pxに出来た*/
+}
+html header .header-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+html header .header-flex .h-left {
+  margin: 0.5%;
+}
+html header .header-flex .h-right ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+html header .header-flex .h-right ul .blue {
+  background-color: #00ccff;
+}
+html header .header-flex .h-right ul li {
+  padding: 25px;
 }
 /*# sourceMappingURL=style.css.map */
