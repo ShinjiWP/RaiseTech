@@ -14,7 +14,9 @@ html body {
   width: 100%;
 }
 html body header {
-  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 html body header .header-flex {
   display: -webkit-box;
@@ -23,8 +25,9 @@ html body header .header-flex {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: red;
+  background-color: white;
   width: 100%;
+  z-index: 10;
 }
 html body header .header-flex .h-left {
   margin: 0.5%;
@@ -37,7 +40,6 @@ html body header .header-flex .h-left {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  z-index: 3;
 }
 html body header .header-flex .h-left img {
   width: 70%;
@@ -54,7 +56,21 @@ html body header .header-flex .h-right ul .blue {
   background-color: #00ccff;
 }
 html body header .header-flex .h-right ul li {
-  padding: 12px;
+  margin-left: 15px;
+  padding: 0 10px;
+  background-color: #fff;
+}
+html body header .header-flex .h-right ul li a {
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+html body header .header-flex .h-right ul li .blue a {
+  color: white;
 }
 html body article {
   display: -webkit-box;
@@ -72,12 +88,12 @@ html body article .mainvisual {
 }
 html body article .mainvisual img {
   width: 100%;
-  height: 100%;
   position: absolute;
-  top: -50px;
-  left: -10px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  z-index: 1;
+  top: -40px;
+}
+html body article .black {
+  clear: both;
+  width: 100%;
+  height: 200px;
 }
 /*# sourceMappingURL=style.css.map */
