@@ -8,15 +8,13 @@ html {
   font-size: 62.5%;
   /*ベースを16px⇒10pxに出来た*/
   height: 100%;
+  width: 100%;
 }
 html body {
   width: 100%;
 }
 html body header {
   z-index: 10;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 html body header .header-flex {
   display: -webkit-box;
@@ -26,7 +24,7 @@ html body header .header-flex {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: red;
-  z-index: 10;
+  width: 100%;
 }
 html body header .header-flex .h-left {
   margin: 0.5%;
@@ -74,7 +72,7 @@ html body article .mainvisual {
 }
 html body article .mainvisual img {
   width: 100%;
-  height: 130%;
+  height: 100%;
   position: absolute;
   top: -50px;
   left: -10px;
