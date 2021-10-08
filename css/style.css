@@ -7,9 +7,16 @@
 html {
   font-size: 62.5%;
   /*ベースを16px⇒10pxに出来た*/
+  height: 100%;
 }
 html body {
   width: 100%;
+}
+html body header {
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 html body header .header-flex {
   display: -webkit-box;
@@ -18,11 +25,11 @@ html body header .header-flex {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #fff;
+  background-color: red;
+  z-index: 10;
 }
 html body header .header-flex .h-left {
   margin: 0.5%;
-  background-color: red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,6 +39,7 @@ html body header .header-flex .h-left {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  z-index: 3;
 }
 html body header .header-flex .h-left img {
   width: 70%;
@@ -41,23 +49,37 @@ html body header .header-flex .h-right ul {
   display: -ms-flexbox;
   display: flex;
   list-style: none;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: bold;
 }
 html body header .header-flex .h-right ul .blue {
   background-color: #00ccff;
 }
 html body header .header-flex .h-right ul li {
-  padding: 15px;
+  padding: 12px;
 }
 html body article {
-  background-color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  background-image: url("../img/bg-hero3.png");
+  background-attachment: fixed;
+  z-index: 0;
 }
-html body article .parallax_box {
+html body article .mainvisual {
   width: 100%;
+  height: 500px;
+  position: relative;
 }
-html body article .parallax_box img {
+html body article .mainvisual img {
   width: 100%;
-  height: 50%;
+  height: 130%;
+  position: absolute;
+  top: -50px;
+  left: -10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 1;
 }
 /*# sourceMappingURL=style.css.map */

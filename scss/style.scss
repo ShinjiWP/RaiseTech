@@ -8,21 +8,30 @@ $green: #5dab92;
 }
 html {
   font-size: 62.5%; /*ベースを16px⇒10pxに出来た*/
+  height: 100%;
   body {
     width: 100%;
+    // height: 100%;
     header {
+      z-index: 10;
+      display: flex;
+
+      // justify-content: space-between;
+
       .header-flex {
         display: flex;
         justify-content: space-between;
-        background-color: #fff;
+        background-color: red\;
+        z-index: 10;
 
         .h-left {
           margin: 0.5%;
-          background-color: red;
+          // background-color: red;
           // text-align: center;
           display: flex;
           align-items: center;
           justify-content: center;
+          z-index: 3;
 
           img {
             width: 70%;
@@ -33,7 +42,7 @@ html {
           ul {
             display: flex;
             list-style: none;
-            font-size: 1.6rem;
+            font-size: 1.3rem;
             font-weight: bold;
 
             .blue {
@@ -41,25 +50,33 @@ html {
             }
 
             li {
-              padding: 15px;
+
+              padding: 12px;
             }
           }
         }
       }
     }
+    
     article {
-      // width: 100%;
-      // background-image: url(/img/bg-hero3.png);
-      background-color: red;
+      display: flex;
+      height: 100%;
+      background-image: url("../img/bg-hero3.png");
+      background-attachment: fixed;
+      z-index: 0;
 
-      .parallax_box {
+      .mainvisual {
         width: 100%;
-        // position: relative;
+        height: 500px;
+        position: relative;
         img {
           width: 100%;
-          // position: absolute;
-          height: 50%;
-          
+          height: 130%;
+          position: absolute;
+          top: -50px;
+          left: -10px;
+          object-fit: cover;
+          z-index: 1;
         }
       }
     }
