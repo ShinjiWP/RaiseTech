@@ -29,6 +29,7 @@ html body header .header-flex {
   width: 100%;
   z-index: 10;
   /*z-indexではなくover-flow:hidden;を使用するのが正しい気がする*/
+  /*そもそもアコーディオンメニューは完成していないが、例を使用した限りではz-indexなどを使用して階層を変更？してあげないとメニューが開いた際に下へずれてしまう*/
 }
 html body header .header-flex .h-left {
   margin: 0.5%;
@@ -98,4 +99,6 @@ html body article .black {
   width: 100%;
   height: 200px;
 }
+
+/*アコーディオンメニューの例*/
 /*# sourceMappingURL=style.css.map */

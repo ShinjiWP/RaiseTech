@@ -41,6 +41,10 @@ html {
           }
         }
 
+        /*そもそもアコーディオンメニューは完成していないが、例を使用した限りではz-indexなどを使用して階層を変更？してあげないとメニューが開いた際に下へずれてしまう。*/
+
+
+
         .h-accordion {
           display: flex;
           width: 70%;
@@ -65,6 +69,7 @@ html {
             height: auto;
             opacity: 1;
             padding: 10px;
+            // z-index: 50;
           }
         }
 
@@ -126,3 +131,46 @@ html {
     }
   }
 }
+
+
+/*アコーディオンメニューの例*/
+//         .accordion{
+//           display:flex;
+//           width:50%;
+//         }
+//         .accordion{
+//           display:flex;
+//           width:50%;
+//           &-hidden{
+//             display: none;
+//           }
+         
+//         }
+
+//         .accordion-open {
+//           display: block;
+//           padding: 10px;
+//           background: #52a261;
+//           cursor: pointer;
+//           margin: 5px 0;
+//           font-weight: 700;
+//         }
+
+// /* Answer部分は最初は表示しない */
+//         .accordion-close {
+//           display: block;
+//           height: 0;
+//           overflow: hidden;
+//           padding: 0;
+//           opacity: 0;
+//           transition: 0.5s;/* 表示速度の設定 */
+//         }
+
+// /* チェックボックスにチェックが入ったらAnswer部分を表示 */
+//         .accordion-hidden:hover + .accordion-open + .accordion-close {
+//           height: auto;
+//           opacity: 1;
+//           padding: 10px;
+//           background: #55acee;
+//           font-weight: 700;
+//         }
