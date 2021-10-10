@@ -25,7 +25,8 @@ html {
         justify-content: space-between;
         background-color: white;
         width: 100%;
-        z-index: 10;
+        z-index: 10; /*z-indexではなくover-flow:hidden;を使用するのが正しい気がする*/
+        // overflow: hidden;
 
         .h-left {
           margin: 0.5%;
@@ -33,39 +34,67 @@ html {
           align-items: center;
           justify-content: center;
           // z-index: 3;
+          width: 30%; /*最速で稼げる～を入れる必要があるし、mixinかなんかでdisplay:none;を使ってウィンドウ幅で消すようにする必要がありそう*/
 
           img {
             width: 70%;
           }
         }
 
-        .h-right {
-          ul {
-            display: flex;
-            list-style: none;
-            font-size: 1.3rem;
-            font-weight: bold;
-
-            .blue {
-              background-color: rgb(0, 204, 255);
+        .h-accordion {
+          display: flex;
+          width: 70%;
+          .hidden {
+            display: none;
+          }
+          h-a-nav {
+            .open {
+              display: block;
+              cursor: pointer;
             }
-
-            li {
-              margin-left: 15px;
-              padding: 0 10px;
-              // height: 60px;
-              background-color: #fff;
-              a {
-                height: 60px;
-                display: flex;
-                align-items: center;
-              }
-              .blue a {
-                color: white;
-              }
+            .accordion-link {
+              display: block;
+              height: 0;
+              overflow: hidden;
+              padding: 0;
+              opacity: 0;
+              transition: 0.5s;
             }
           }
+          .hidden:hover + .open + .accordion-link {
+            height: auto;
+            opacity: 1;
+            padding: 10px;
+          }
         }
+
+        // .h-right {
+        //   ul {
+        //     display: flex;
+        //     list-style: none;
+        //     font-size: 1.3rem;
+        //     font-weight: bold;
+
+        //     .blue {
+        //       background-color: rgb(0, 204, 255);
+        //     }
+
+        //     li {
+        //       margin-left: 15px;
+        //       padding: 0 10px;
+        //       // height: 60px;
+        //       background-color: #fff;
+        //       a {
+        //         height: 60px;
+        //         display: flex;
+        //         align-items: center;
+        //       }
+        //       .blue a {
+        //         color: white;
+        //       }
+        //     }
+        //   }
+        // }
       }
     }
 

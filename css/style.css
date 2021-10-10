@@ -28,6 +28,7 @@ html body header .header-flex {
   background-color: white;
   width: 100%;
   z-index: 10;
+  /*z-indexではなくover-flow:hidden;を使用するのが正しい気がする*/
 }
 html body header .header-flex .h-left {
   margin: 0.5%;
@@ -40,37 +41,38 @@ html body header .header-flex .h-left {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 30%;
+  /*最速で稼げる～を入れる必要があるし、mixinかなんかでdisplay:none;を使ってウィンドウ幅で消すようにする必要がありそう*/
 }
 html body header .header-flex .h-left img {
   width: 70%;
 }
-html body header .header-flex .h-right ul {
+html body header .header-flex .h-accordion {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  list-style: none;
-  font-size: 1.3rem;
-  font-weight: bold;
+  width: 70%;
 }
-html body header .header-flex .h-right ul .blue {
-  background-color: #00ccff;
+html body header .header-flex .h-accordion .hidden {
+  display: none;
 }
-html body header .header-flex .h-right ul li {
-  margin-left: 15px;
-  padding: 0 10px;
-  background-color: #fff;
+html body header .header-flex .h-accordion h-a-nav .open {
+  display: block;
+  cursor: pointer;
 }
-html body header .header-flex .h-right ul li a {
-  height: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+html body header .header-flex .h-accordion h-a-nav .accordion-link {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
-html body header .header-flex .h-right ul li .blue a {
-  color: white;
+html body header .header-flex .h-accordion .hidden:hover + .open + .accordion-link {
+  height: auto;
+  opacity: 1;
+  padding: 10px;
 }
 html body article {
   display: -webkit-box;
