@@ -29,7 +29,7 @@ html body header .header-flex {
   width: 100%;
   z-index: 10;
   /*z-indexではなくover-flow:hidden;を使用するのが正しい気がする*/
-  /*そもそもアコーディオンメニューは完成していないが、例を使用した限りではz-indexなどを使用して階層を変更？してあげないとメニューが開いた際に下へずれてしまう*/
+  /*そもそもアコーディオンメニューは完成していないが、例を使用した限りではz-indexなどを使用して階層を変更？してあげないとメニューが開いた際に下へずれてしまう。*/
 }
 html body header .header-flex .h-left {
   margin: 0.5%;
@@ -42,35 +42,48 @@ html body header .header-flex .h-left {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 30%;
+  width: 20%;
   /*最速で稼げる～を入れる必要があるし、mixinかなんかでdisplay:none;を使ってウィンドウ幅で消すようにする必要がありそう*/
 }
 html body header .header-flex .h-left img {
-  width: 70%;
+  width: 50%;
 }
-html body header .header-flex .h-accordion {
+html body header .header-flex .header-nav {
+  width: 55%;
+  position: relative;
+}
+html body header .header-flex .header-nav .h-accordion {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 70%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
-html body header .header-flex .h-accordion .hidden {
+html body header .header-flex .header-nav .h-accordion .hidden {
   display: none;
 }
-html body header .header-flex .h-accordion h-a-nav .open {
-  display: block;
+html body header .header-flex .header-nav .h-accordion .open {
+  display: inline-block;
   cursor: pointer;
+  font-size: 1.2rem;
+  margin: auto 5px;
 }
-html body header .header-flex .h-accordion h-a-nav .accordion-link {
+html body header .header-flex .header-nav .h-accordion .accordion-link {
   display: block;
   height: 0;
   overflow: hidden;
   padding: 0;
   opacity: 0;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  position: absolute;
 }
-html body header .header-flex .h-accordion .hidden:hover + .open + .accordion-link {
+html body header .header-flex .header-nav .h-accordion .accordion-link li {
+  list-style-type: none;
+}
+html body header .header-flex .header-nav .h-accordion .hidden:hover + .open + .accordion-link {
   height: auto;
   opacity: 1;
   padding: 10px;
