@@ -1,7 +1,7 @@
 //variables
 $black: #2c363f;
 $white: #fefefe;
-$green: #5dab92;
+$blue: #2498b3;
 
 * {
   box-sizing: border-box;
@@ -13,16 +13,15 @@ html {
 
   body {
     width: 100%;
-    // height: 100%;
-    header {
-      // z-index: 10;
-      display: flex;
 
-      // justify-content: space-between;
+    header {
+      display: flex;
 
       .header-flex {
         display: flex;
+        position: fixed;
         justify-content: space-between;
+        // align-items: center;
         background-color: white;
         width: 100%;
         z-index: 10; /*z-indexではなくover-flow:hidden;を使用するのが正しい気がする*/
@@ -33,7 +32,6 @@ html {
           display: flex;
           align-items: center;
           justify-content: center;
-          // z-index: 3;
           width: 20%; /*最速で稼げる～を入れる必要があるし、mixinかなんかでdisplay:none;を使ってウィンドウ幅で消すようにする必要がありそう*/
 
           img {
@@ -45,14 +43,18 @@ html {
         /*そもそもアコーディオンメニューは完成していないが、例を使用した限りではz-indexなどを使用して階層を変更？してあげないとメニューが開いた際に下へずれてしまう。*/
         .header-nav {
           width: 55%;
-          position: relative;
+          height: 50px;
+          // align-items: center;
+
+          // position: relative;
 
           .h-accordion {
             display: flex;
             width: 100%;
-            position: absolute;
-            top: 0;
-            right: 0;
+            justify-content: flex-end;
+            // position: absolute;
+            // top: 0;
+            // right: 0;
             // align-items: center;
             // margin: auto 0;
             // font-size: 2.5rem;
@@ -64,20 +66,20 @@ html {
             .open {
               display: inline-block;
               cursor: pointer;
-              font-size: 1.2rem;
-              margin: auto 5px;
-              // height: 100%;
+              font-size: 1.3rem;
+              margin: 10px 5px;
+              font-weight: 700;
             }
             .accordion-link {
               display: block;
               height: 0;
               overflow: hidden;
-              padding: 0;
+              padding: 0 5px; /*padding:0;だと斜めに出てくるように見える*/
               opacity: 0;
               transition: 0.2s;
               position: absolute;
 
-              li {
+              ul {
                 list-style-type: none;
               }
             }
@@ -85,39 +87,18 @@ html {
             .hidden:hover + .open + .accordion-link {
               height: auto;
               opacity: 1;
-              padding: 10px;
-              // z-index: 50;
+              padding: 5px;
+            }
+            .box {
+              height: 50px;
+              
+              &:last-of-type {
+                background-color: $blue;
+                color: #fff;
+              }
             }
           }
         }
-
-        // .h-right {
-        //   ul {
-        //     display: flex;
-        //     list-style: none;
-        //     font-size: 1.3rem;
-        //     font-weight: bold;
-
-        //     .blue {
-        //       background-color: rgb(0, 204, 255);
-        //     }
-
-        //     li {
-        //       margin-left: 15px;
-        //       padding: 0 10px;
-        //       // height: 60px;
-        //       background-color: #fff;
-        //       a {
-        //         height: 60px;
-        //         display: flex;
-        //         align-items: center;
-        //       }
-        //       .blue a {
-        //         color: white;
-        //       }
-        //     }
-        //   }
-        // }
       }
     }
 
@@ -136,7 +117,7 @@ html {
           width: 100%;
           // height: 100%;
           position: absolute;
-          top: -40px;
+          top: 50px;
           // object-fit: cover;
           // z-index: 0;
         }
@@ -149,45 +130,3 @@ html {
     }
   }
 }
-
-/*アコーディオンメニューの例*/
-//         .accordion{
-//           display:flex;
-//           width:50%;
-//         }
-//         .accordion{
-//           display:flex;
-//           width:50%;
-//           &-hidden{
-//             display: none;
-//           }
-
-//         }
-
-//         .accordion-open {
-//           display: block;
-//           padding: 10px;
-//           background: #52a261;
-//           cursor: pointer;
-//           margin: 5px 0;
-//           font-weight: 700;
-//         }
-
-// /* Answer部分は最初は表示しない */
-//         .accordion-close {
-//           display: block;
-//           height: 0;
-//           overflow: hidden;
-//           padding: 0;
-//           opacity: 0;
-//           transition: 0.5s;/* 表示速度の設定 */
-//         }
-
-// /* チェックボックスにチェックが入ったらAnswer部分を表示 */
-//         .accordion-hidden:hover + .accordion-open + .accordion-close {
-//           height: auto;
-//           opacity: 1;
-//           padding: 10px;
-//           background: #55acee;
-//           font-weight: 700;
-//         }

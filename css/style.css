@@ -22,6 +22,7 @@ html body header .header-flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: fixed;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -50,16 +51,16 @@ html body header .header-flex .h-left img {
 }
 html body header .header-flex .header-nav {
   width: 55%;
-  position: relative;
+  height: 50px;
 }
 html body header .header-flex .header-nav .h-accordion {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 html body header .header-flex .header-nav .h-accordion .hidden {
   display: none;
@@ -67,26 +68,35 @@ html body header .header-flex .header-nav .h-accordion .hidden {
 html body header .header-flex .header-nav .h-accordion .open {
   display: inline-block;
   cursor: pointer;
-  font-size: 1.2rem;
-  margin: auto 5px;
+  font-size: 1.3rem;
+  margin: 5px;
+  font-weight: 700;
 }
 html body header .header-flex .header-nav .h-accordion .accordion-link {
   display: block;
   height: 0;
   overflow: hidden;
-  padding: 0;
+  padding: 0 5px;
+  /*padding:0;だと斜めに出てくるように見える*/
   opacity: 0;
   -webkit-transition: 0.2s;
   transition: 0.2s;
   position: absolute;
 }
-html body header .header-flex .header-nav .h-accordion .accordion-link li {
+html body header .header-flex .header-nav .h-accordion .accordion-link ul {
   list-style-type: none;
 }
 html body header .header-flex .header-nav .h-accordion .hidden:hover + .open + .accordion-link {
   height: auto;
   opacity: 1;
-  padding: 10px;
+  padding: 5px;
+}
+html body header .header-flex .header-nav .h-accordion .box {
+  height: 50px;
+}
+html body header .header-flex .header-nav .h-accordion .box:last-of-type {
+  background-color: #2498b3;
+  color: #fff;
 }
 html body article {
   display: -webkit-box;
@@ -105,13 +115,11 @@ html body article .mainvisual {
 html body article .mainvisual img {
   width: 100%;
   position: absolute;
-  top: -40px;
+  top: 50px;
 }
 html body article .black {
   clear: both;
   width: 100%;
   height: 200px;
 }
-
-/*アコーディオンメニューの例*/
 /*# sourceMappingURL=style.css.map */

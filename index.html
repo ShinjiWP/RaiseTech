@@ -21,10 +21,9 @@
         <div class="h-left">
           <img src="/img/header-logo.svg" alt="" />
         </div>
-        <!--aタグのせいでアコーディオンメニュー出来ないのかも⇒checkboxをかこっているdiv要素のclassを指定していたのが何故か原因だった理由は不明-->
         <div class="header-nav">
           <div class="h-accordion">
-            <div>
+            <div class="box">
               <input type="checkbox" id="check1" class="hidden" />
               <label for="check1" class="open">はじめての方へ</label>
               <label for="check1" class="accordion-link">
@@ -37,7 +36,7 @@
                 </ul></label
               >
             </div>
-            <div>
+            <div class="box">
               <input type="checkbox" id="check2" class="hidden" />
               <label for="check2" class="open">コース案内</label>
               <label for="check2" class="accordion-link">
@@ -52,14 +51,14 @@
                 </ul>
               </label>
             </div>
-            <div>
+            <div class="box">
               <input type="checkbox" id="check3" class="hidden" />
               <label for="check3" class="open">講師紹介</label>
               <label for="check3" class="accordion-link"
                 ><a href="#"></a
               ></label>
             </div>
-            <div>
+            <div class="box">
               <input type="checkbox" id="check4" class="hidden" />
               <label for="check4" class="open">卒業生の声・実績</label>
               <label for="check4" class="accordion-link">
@@ -69,7 +68,7 @@
                 </ul>
               </label>
             </div>
-            <div>
+            <div class="box">
               <input type="checkbox" id="check5" class="hidden" />
               <label for="check5" class="open">メディア</label>
               <label for="check5" class="accordion-link">
@@ -79,7 +78,7 @@
                 </ul>
               </label>
             </div>
-            <div>
+            <div class="box">
               <input type="checkbox" id="check6" class="hidden" />
               <label for="check6" class="open">サポート</label>
               <label for="check6" class="accordion-link">
@@ -89,14 +88,14 @@
                 </ul>
               </label>
             </div>
-            <div>
+            <div class="box">
               <input type="checkbox" id="check7" class="hidden" />
               <label for="check7" class="open">受講お申込み</label>
               <label for="check7" class="accordion-link"
                 ><a href="#"></a
               ></label>
             </div>
-          </div>          
+          </div>
         </div>
       </div>
     </header>
@@ -111,25 +110,4 @@
   </body>
 </html>
 
-!<!--アコーディオンメニューの例-->
-<!-- <div class="accordion">
-  <div>
-    <input type="checkbox" id="check1" class="accordion-hidden">
-  <label for="check1" class="accordion-open">Question1</label>
-  <label for="check1" class="accordion-close"> Answer1 Answer1 Answer1 Answer1 Answer1 Answer1 Answer1 Answer1 Answer1 Answer1</label>
-  </div>
-  <div>
-  <input type="checkbox" id="check2" class="accordion-hidden">
-  <label for="check2" class="accordion-open">Question2</label>
-  <label for="check2" class="accordion-close">Answer2 Answer2 Answer2 Answer2 Answer2 Answer2 Answer2 Answer2 Answer2 Answer2</label>
-</div>
-  <div>
-  <input type="checkbox" id="check3" class="accordion-hidden">
-  <label for="check3" class="accordion-open">Question3</label>
-  <label for="check3" class="accordion-close">Answer3 Answer3 Answer3 Answer3 Answer3 Answer3 Answer3 Answer3 Answer3 Answer3</label>
-</div>
-  <div>
-  <input type="checkbox" id="check4" class="accordion-hidden">
-  <label for="check4" class="accordion-open">Question4</label>
-  <label for="check4" class="accordion-close">Answer4 Answer4 Answer4 Answer4 Answer4 Answer4 Answer4 Answer4 Answer4 Answer4</label>
-    </div> -->
+
