@@ -50,7 +50,7 @@ html body header .header-flex .h-left img {
   width: 50%;
 }
 html body header .header-flex .header-nav {
-  width: 60%;
+  width: 70%;
   height: 50px;
 }
 html body header .header-flex .header-nav .h-accordion {
@@ -76,7 +76,7 @@ html body header .header-flex .header-nav .h-accordion .accordion-link {
   display: block;
   height: 0;
   overflow: hidden;
-  padding: 0 10px;
+  padding: 0 5px 0 0;
   /*padding:0;だと斜めに出てくるように見える*/
   opacity: 0;
   -webkit-transition: 0.2s;
@@ -85,17 +85,18 @@ html body header .header-flex .header-nav .h-accordion .accordion-link {
 }
 html body header .header-flex .header-nav .h-accordion .accordion-link li {
   list-style-type: none;
-  background-color: #f16b6b;
+  background-color: white;
   padding: 15px 60px 15px 15px;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 html body header .header-flex .header-nav .h-accordion .hidden:hover + .open + .accordion-link {
   height: auto;
   opacity: 1;
-  padding: 10px;
+  padding: 10px 5px 0 0;
 }
 html body header .header-flex .header-nav .h-accordion .box {
   height: 50px;
+  background-color: red;
 }
 html body header .header-flex .header-nav .h-accordion .box:last-of-type {
   background-color: #2498b3;

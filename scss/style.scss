@@ -42,7 +42,7 @@ html {
 
         /*そもそもアコーディオンメニューは完成していないが、例を使用した限りではz-indexなどを使用して階層を変更？してあげないとメニューが開いた際に下へずれてしまう。*/
         .header-nav {
-          width: 60%;
+          width: 70%;
           height: 50px;
           // align-items: center;
 
@@ -74,26 +74,27 @@ html {
               display: block;
               height: 0;
               overflow: hidden;
-              padding: 0 10px; /*padding:0;だと斜めに出てくるように見える*/
+              padding: 0 5px 0 0; /*padding:0;だと斜めに出てくるように見える*/
               opacity: 0;
               transition: 0.2s;
               position: absolute;
 
               li {
                 list-style-type: none;
-                background-color: $red;
+                background-color: white;
                 padding: 15px 60px 15px 15px;
-                font-size: 1.4rem;
+                font-size: 1.3rem;
               }
             }
 
             .hidden:hover + .open + .accordion-link {
               height: auto;
               opacity: 1;
-              padding: 10px;
+              padding: 10px 5px 0 0;
             }
             .box {
               height: 50px;
+              background-color: red;
 
               &:last-of-type {
                 background-color: $blue;
