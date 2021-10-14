@@ -50,7 +50,7 @@ html body header .header-flex .h-left img {
   width: 50%;
 }
 html body header .header-flex .header-nav {
-  width: 55%;
+  width: 60%;
   height: 50px;
 }
 html body header .header-flex .header-nav .h-accordion {
@@ -69,27 +69,30 @@ html body header .header-flex .header-nav .h-accordion .open {
   display: inline-block;
   cursor: pointer;
   font-size: 1.3rem;
-  margin: 5px;
+  margin: 15px 10px 5px 20px;
   font-weight: 700;
 }
 html body header .header-flex .header-nav .h-accordion .accordion-link {
   display: block;
   height: 0;
   overflow: hidden;
-  padding: 0 5px;
+  padding: 0 10px;
   /*padding:0;だと斜めに出てくるように見える*/
   opacity: 0;
   -webkit-transition: 0.2s;
   transition: 0.2s;
   position: absolute;
 }
-html body header .header-flex .header-nav .h-accordion .accordion-link ul {
+html body header .header-flex .header-nav .h-accordion .accordion-link li {
   list-style-type: none;
+  background-color: #f16b6b;
+  padding: 15px 60px 15px 15px;
+  font-size: 1.4rem;
 }
 html body header .header-flex .header-nav .h-accordion .hidden:hover + .open + .accordion-link {
   height: auto;
   opacity: 1;
-  padding: 5px;
+  padding: 10px;
 }
 html body header .header-flex .header-nav .h-accordion .box {
   height: 50px;
