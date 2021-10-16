@@ -12,6 +12,7 @@ html {
 }
 html body {
   width: 100%;
+  font-family: sans-serif;
 }
 html body header {
   display: -webkit-box;
@@ -33,7 +34,7 @@ html body header .header-flex {
   /*そもそもアコーディオンメニューは完成していないが、例を使用した限りではz-indexなどを使用して階層を変更？してあげないとメニューが開いた際に下へずれてしまう。*/
 }
 html body header .header-flex .h-left {
-  margin: 1%;
+  margin: 0.5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -44,12 +45,16 @@ html body header .header-flex .h-left {
   /*最速で稼げる～を入れる必要があるし、mixinかなんかでdisplay:none;を使ってウィンドウ幅で消すようにする必要がありそう*/
 }
 html body header .header-flex .h-left img {
-  width: 50%;
+  width: 35%;
 }
 html body header .header-flex .h-left span {
   margin-left: 10px;
-  width: 50%;
-  font-weight: 1000;
+  width: 60%;
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+html body header .header-flex .h-left span strong {
+  font-size: 1.4rem;
 }
 html body header .header-flex .header-nav {
   width: 70%;
@@ -95,8 +100,8 @@ html body header .header-flex .header-nav .h-accordion .box .accordion-link {
   padding: 0 5px 0 0;
   /*padding:0;だと斜めに出てくるように見える*/
   opacity: 0;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   position: absolute;
 }
 html body header .header-flex .header-nav .h-accordion .box .accordion-link li {
@@ -112,11 +117,13 @@ html body header .header-flex .header-nav .h-accordion .box .accordion-link li a
   padding: 0px 60px 0px 15px;
   background-color: #e7f8fc;
   font-weight: bold;
+  color: #494949;
 }
 html body header .header-flex .header-nav .h-accordion .box .accordion-link li a:hover {
   background-color: #fff;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  color: #2498b3;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 html body header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .accordion-link {
   height: auto;
@@ -134,17 +141,58 @@ html body article {
 }
 html body article .mainvisual {
   width: 100%;
-  height: 500px;
+  height: 540px;
   position: relative;
+  overflow: hidden;
 }
 html body article .mainvisual img {
-  width: 100%;
+  width: 130%;
   position: absolute;
-  top: 50px;
+  top: -10px;
+  left: -175px;
 }
 html body article .black {
   clear: both;
   width: 100%;
   height: 200px;
+}
+html body article .top-circle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+html body article .top-circle-box {
+  position: absolute;
+  width: 340px;
+  height: 280px;
+  background-color: #fff;
+  z-index: 20;
+  top: 120px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+html body article .top-circle-box img {
+  width: 68%;
+  margin: 40px auto 30px auto;
+}
+html body .black {
+  background-color: black;
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  z-index: 10;
 }
 /*# sourceMappingURL=style.css.map */

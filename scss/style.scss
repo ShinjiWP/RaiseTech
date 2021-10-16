@@ -14,6 +14,7 @@ html {
 
   body {
     width: 100%;
+    font-family: sans-serif;
 
     header {
       display: flex;
@@ -29,19 +30,23 @@ html {
         // overflow: hidden;
 
         .h-left {
-          margin: 1%;
+          margin: 0.5%;
           display: flex;
           align-items: center;
           width: 25%; /*最速で稼げる～を入れる必要があるし、mixinかなんかでdisplay:none;を使ってウィンドウ幅で消すようにする必要がありそう*/
 
           img {
-            width: 50%;
+            width: 35%;
             // overflow: hidden;
           }
           span {
             margin-left: 10px;
-            width: 50%;
-            font-weight: 1000;
+            width: 60%;
+            font-weight: 900;
+            font-size: 1.1rem;
+            strong {
+              font-size: 1.4rem;
+            }
           }
         }
 
@@ -59,11 +64,11 @@ html {
               height: 50px;
               line-height: 50px;
               background-color: #fff;
-
               &:last-of-type {
                 background-color: $blue;
                 color: #fff;
               }
+
               .hidden {
                 display: none;
               }
@@ -87,7 +92,7 @@ html {
                 overflow: hidden;
                 padding: 0 5px 0 0; /*padding:0;だと斜めに出てくるように見える*/
                 opacity: 0;
-                transition: 0.2s;
+                transition: 0.5s;
                 position: absolute;
 
                 li {
@@ -104,9 +109,11 @@ html {
                     padding: 0px 60px 0px 15px;
                     background-color: #e7f8fc;
                     font-weight: bold;
+                    color: rgb(73, 73, 73);
                     &:hover {
                       background-color: #fff;
-                      transition: 0.3s;
+                      color: $blue;
+                      transition: 0.5s;
                     }
                   }
                 }
@@ -132,12 +139,15 @@ html {
 
       .mainvisual {
         width: 100%;
-        height: 500px;
+        height: 540px;
         position: relative;
+        overflow: hidden;
         img {
-          width: 100%;
+          width: 130%;
+          // height: 600px;
           position: absolute;
-          top: 50px;
+          top: -10px;
+          left: -175px;
           // object-fit: cover;
           // z-index: 0;
         }
@@ -147,6 +157,40 @@ html {
         width: 100%;
         height: 200px;
       }
+      .top-circle {
+        display: flex;
+        justify-content: center;
+        // position: relative;
+        &-box {
+          position: absolute;
+          width: 340px;
+          height: 280px;
+          background-color: #fff;
+          z-index: 20;
+          top: 120px;
+          left: 0;
+          right: 0;
+          margin: auto;
+          border-radius: 15px;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          img {
+            width: 68%;
+            margin: 40px auto 30px auto;
+          }
+          p{
+            
+          }
+        }
+      }
+    }
+    .black {
+      background-color: black;
+      width: 100%;
+      height: 300px;
+      position: absolute;
+      z-index: 10;
     }
   }
 }
