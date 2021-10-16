@@ -2,6 +2,7 @@
 $black: #2c363f;
 $red: #f16b6b;
 $blue: #2498b3;
+$open-hover: #d4f1f8;
 
 * {
   box-sizing: border-box;
@@ -44,61 +45,73 @@ html {
         .header-nav {
           width: 70%;
           height: 50px;
-          // align-items: center;
-
-          // position: relative;
 
           .h-accordion {
             display: flex;
             width: 100%;
             justify-content: flex-end;
-            // position: absolute;
-            // top: 0;
-            // right: 0;
-            // align-items: center;
-            // margin: auto 0;
-            // font-size: 2.5rem;
 
-            .hidden {
-              display: none;
-            }
-
-            .open {
-              display: inline-block;
-              cursor: pointer;
-              font-size: 1.3rem;
-              margin: 15px 10px 5px 20px;
-              font-weight: 700;
-            }
-            .accordion-link {
-              display: block;
-              height: 0;
-              overflow: hidden;
-              padding: 0 5px 0 0; /*padding:0;だと斜めに出てくるように見える*/
-              opacity: 0;
-              transition: 0.2s;
-              position: absolute;
-
-              li {
-                list-style-type: none;
-                background-color: white;
-                padding: 15px 60px 15px 15px;
-                font-size: 1.3rem;
-              }
-            }
-
-            .hidden:hover + .open + .accordion-link {
-              height: auto;
-              opacity: 1;
-              padding: 10px 5px 0 0;
-            }
             .box {
               height: 50px;
-              background-color: red;
+              line-height: 50px;
+              background-color: #fff;
 
               &:last-of-type {
                 background-color: $blue;
                 color: #fff;
+              }
+              .hidden {
+                display: none;
+              }
+
+              .open {
+                display: block;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+                font-size: 1.3rem;
+                padding: 0 20px 0 20px;
+                font-weight: 700;
+                &:hover {
+                  background-color: $open-hover;
+                }
+              }
+
+              .accordion-link {
+                display: block;
+                height: 0;
+                overflow: hidden;
+                padding: 0 5px 0 0; /*padding:0;だと斜めに出てくるように見える*/
+                opacity: 0;
+                transition: 0.2s;
+                position: absolute;
+
+                li {
+                  // width: 100%;
+                  display: block;
+                  list-style-type: none;
+                  background-color: white;
+                  font-size: 1.3rem;
+
+                  a {
+                    display: block;
+                    width: 100%;
+                    text-decoration: none;
+                    padding: 0px 60px 0px 15px;
+                    background-color: #e7f8fc;
+                    font-weight: bold;
+                    &:hover {
+                      background-color: #fff;
+                      transition: 0.3s;
+                    }
+                  }
+                }
+              }
+
+              .hidden:hover + .open + .accordion-link {
+                height: auto;
+                opacity: 1;
+                padding: 0 5px 0 0;
               }
             }
           }
@@ -119,7 +132,6 @@ html {
         position: relative;
         img {
           width: 100%;
-          // height: 100%;
           position: absolute;
           top: 50px;
           // object-fit: cover;

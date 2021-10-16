@@ -62,17 +62,31 @@ html body header .header-flex .header-nav .h-accordion {
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
-html body header .header-flex .header-nav .h-accordion .hidden {
+html body header .header-flex .header-nav .h-accordion .box {
+  height: 50px;
+  line-height: 50px;
+  background-color: #fff;
+}
+html body header .header-flex .header-nav .h-accordion .box:last-of-type {
+  background-color: #2498b3;
+  color: #fff;
+}
+html body header .header-flex .header-nav .h-accordion .box .hidden {
   display: none;
 }
-html body header .header-flex .header-nav .h-accordion .open {
-  display: inline-block;
+html body header .header-flex .header-nav .h-accordion .box .open {
+  display: block;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
   font-size: 1.3rem;
-  margin: 15px 10px 5px 20px;
+  padding: 0 20px 0 20px;
   font-weight: 700;
 }
-html body header .header-flex .header-nav .h-accordion .accordion-link {
+html body header .header-flex .header-nav .h-accordion .box .open:hover {
+  background-color: #d4f1f8;
+}
+html body header .header-flex .header-nav .h-accordion .box .accordion-link {
   display: block;
   height: 0;
   overflow: hidden;
@@ -83,24 +97,29 @@ html body header .header-flex .header-nav .h-accordion .accordion-link {
   transition: 0.2s;
   position: absolute;
 }
-html body header .header-flex .header-nav .h-accordion .accordion-link li {
+html body header .header-flex .header-nav .h-accordion .box .accordion-link li {
+  display: block;
   list-style-type: none;
   background-color: white;
-  padding: 15px 60px 15px 15px;
   font-size: 1.3rem;
 }
-html body header .header-flex .header-nav .h-accordion .hidden:hover + .open + .accordion-link {
+html body header .header-flex .header-nav .h-accordion .box .accordion-link li a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  padding: 0px 60px 0px 15px;
+  background-color: #e7f8fc;
+  font-weight: bold;
+}
+html body header .header-flex .header-nav .h-accordion .box .accordion-link li a:hover {
+  background-color: #fff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+html body header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .accordion-link {
   height: auto;
   opacity: 1;
-  padding: 10px 5px 0 0;
-}
-html body header .header-flex .header-nav .h-accordion .box {
-  height: 50px;
-  background-color: red;
-}
-html body header .header-flex .header-nav .h-accordion .box:last-of-type {
-  background-color: #2498b3;
-  color: #fff;
+  padding: 0 5px 0 0;
 }
 html body article {
   display: -webkit-box;
