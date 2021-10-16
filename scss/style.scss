@@ -29,15 +29,19 @@ html {
         // overflow: hidden;
 
         .h-left {
-          margin: 0.5%;
+          margin: 1%;
           display: flex;
           align-items: center;
-          justify-content: center;
-          width: 20%; /*最速で稼げる～を入れる必要があるし、mixinかなんかでdisplay:none;を使ってウィンドウ幅で消すようにする必要がありそう*/
+          width: 25%; /*最速で稼げる～を入れる必要があるし、mixinかなんかでdisplay:none;を使ってウィンドウ幅で消すようにする必要がありそう*/
 
           img {
             width: 50%;
             // overflow: hidden;
+          }
+          span {
+            margin-left: 10px;
+            width: 50%;
+            font-weight: 1000;
           }
         }
 
