@@ -143,26 +143,37 @@ html body article {
   height: 100%;
   background-image: url("../img/bg-hero3.png");
   background-attachment: fixed;
-  background-size: contain;
+  /*背景画像固定*/
+  background-position: center;
+  /*背景画像を中央寄せ*/
   background-size: cover;
-  /*このプロパティで背景画像がウィンドウ幅に合わせてサイズを変更してくれる。ウィンドウ幅に追従する。*/
+  /*背景画像でウィンドウをカバー*/
   z-index: 0;
   overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 html body article .mainvisual {
-  width: 100%;
-  height: 540px;
+  width: 130%;
+  height: 600px;
   position: relative;
   overflow: hidden;
+  /*はみ出したとこは隠す*/
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 html body article .mainvisual img {
   width: 130%;
   height: 600px;
+  max-width: 130%;
   position: absolute;
-  top: -10px;
+  top: 10px;
   left: 50%;
   overflow: hidden;
   margin-left: -65%;
+  /*幅の半分のネガティブマージン？*/
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 html body article .black {
   clear: both;
@@ -183,7 +194,7 @@ html body article .top-circle-box {
   height: 280px;
   background-color: #fff;
   z-index: 8;
-  top: 120px;
+  top: 100px;
   left: 0;
   right: 0;
   margin: auto;
