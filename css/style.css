@@ -34,7 +34,6 @@ html body header .header-flex {
   /*そもそもアコーディオンメニューは完成していないが、例を使用した限りではz-indexなどを使用して階層を変更？してあげないとメニューが開いた際に下へずれてしまう。*/
 }
 html body header .header-flex .h-left {
-  margin: 0.5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,10 +41,12 @@ html body header .header-flex .h-left {
       -ms-flex-align: center;
           align-items: center;
   width: 25%;
+  height: 50px;
   /*最速で稼げる～を入れる必要があるし、mixinかなんかでdisplay:none;を使ってウィンドウ幅で消すようにする必要がありそう*/
 }
 html body header .header-flex .h-left img {
   width: 35%;
+  margin-left: 10px;
 }
 html body header .header-flex .h-left span {
   margin-left: 10px;
@@ -93,6 +94,10 @@ html body header .header-flex .header-nav .h-accordion .box .open {
 html body header .header-flex .header-nav .h-accordion .box .open:hover {
   background-color: #d4f1f8;
 }
+html body header .header-flex .header-nav .h-accordion .box .open-not-hover:hover {
+  background-color: #2498b3;
+  color: #fff;
+}
 html body header .header-flex .header-nav .h-accordion .box .accordion-link {
   display: block;
   height: 0;
@@ -137,6 +142,8 @@ html body article {
   height: 100%;
   background-image: url("../img/bg-hero3.png");
   background-attachment: fixed;
+  background-size: contain;
+  /*このプロパティで背景画像がウィンドウ幅に合わせてサイズを変更してくれる。ウィンドウ幅に追従する。*/
   z-index: 0;
 }
 html body article .mainvisual {
@@ -169,7 +176,7 @@ html body article .top-circle-box {
   width: 340px;
   height: 280px;
   background-color: #fff;
-  z-index: 20;
+  z-index: 8;
   top: 120px;
   left: 0;
   right: 0;

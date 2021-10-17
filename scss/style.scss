@@ -30,13 +30,14 @@ html {
         // overflow: hidden;
 
         .h-left {
-          margin: 0.5%;
           display: flex;
           align-items: center;
-          width: 25%; /*最速で稼げる～を入れる必要があるし、mixinかなんかでdisplay:none;を使ってウィンドウ幅で消すようにする必要がありそう*/
+          width: 25%;
+          height: 50px; /*最速で稼げる～を入れる必要があるし、mixinかなんかでdisplay:none;を使ってウィンドウ幅で消すようにする必要がありそう*/
 
           img {
             width: 35%;
+            margin-left: 10px;
             // overflow: hidden;
           }
           span {
@@ -84,6 +85,10 @@ html {
                 &:hover {
                   background-color: $open-hover;
                 }
+              }
+              .open-not-hover:hover {
+                background-color: $blue;
+                color: #fff;
               }
 
               .accordion-link {
@@ -135,6 +140,7 @@ html {
       height: 100%;
       background-image: url("../img/bg-hero3.png");
       background-attachment: fixed;
+      background-size: contain;/*このプロパティで背景画像がウィンドウ幅に合わせてサイズを変更してくれる。ウィンドウ幅に追従する。*/
       z-index: 0;
 
       .mainvisual {
@@ -166,7 +172,7 @@ html {
           width: 340px;
           height: 280px;
           background-color: #fff;
-          z-index: 20;
+          z-index: 8;
           top: 120px;
           left: 0;
           right: 0;
@@ -179,8 +185,7 @@ html {
             width: 68%;
             margin: 40px auto 30px auto;
           }
-          p{
-            
+          p {
           }
         }
       }
