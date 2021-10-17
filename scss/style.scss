@@ -136,24 +136,34 @@ html {
     }
 
     article {
+      article-main {
+      }
       display: flex;
+      width: 100%;
       height: 100%;
       background-image: url("../img/bg-hero3.png");
       background-attachment: fixed;
-      background-size: contain;/*このプロパティで背景画像がウィンドウ幅に合わせてサイズを変更してくれる。ウィンドウ幅に追従する。*/
+      background-size: contain;
+      background-size: cover; /*このプロパティで背景画像がウィンドウ幅に合わせてサイズを変更してくれる。ウィンドウ幅に追従する。*/
       z-index: 0;
+      overflow: hidden;
 
       .mainvisual {
         width: 100%;
+        // max-width: 1500px;
         height: 540px;
         position: relative;
         overflow: hidden;
         img {
           width: 130%;
-          // height: 600px;
+          // min-width: 1200px;
+          height: 600px;
           position: absolute;
           top: -10px;
-          left: -175px;
+          left: 50%;
+          overflow: hidden;
+          // background-size: contain;
+          margin-left: -65%;
           // object-fit: cover;
           // z-index: 0;
         }
@@ -161,7 +171,7 @@ html {
       .black {
         clear: both;
         width: 100%;
-        height: 200px;
+        height: 20%;
       }
       .top-circle {
         display: flex;
