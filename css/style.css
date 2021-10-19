@@ -9,6 +9,7 @@ html {
   /*ベースを16px⇒10pxに出来た*/
   height: 100%;
   width: 100%;
+  /*最速で～をブロック要素からはみ出して書けるようになったが、ヘッダーの画像がウィンドウ幅に左右されるようになってしまった*/
 }
 html body {
   font-family: "Noto Sans JP", sans-serif;
@@ -30,7 +31,6 @@ html body .header .header-flex {
   /*z-indexではなくover-flow:hidden;を使用するのが正しい気がする*/
 }
 html body .header .header-flex .h-header {
-  display: block;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -39,7 +39,7 @@ html body .header .header-flex .h-header {
   /*最速で稼げる～を入れる必要があるし、mixinかなんかでdisplay:none;を使ってウィンドウ幅で消すようにする必要がありそう*/
 }
 html body .header .header-flex .h-header a {
-  width: 100%;
+  width: 50%;
   height: 56px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -47,13 +47,34 @@ html body .header .header-flex .h-header a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-decoration: none;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: unset;
+      -ms-flex-pack: unset;
+          justify-content: unset;
+  color: black;
 }
 html body .header .header-flex .h-header a img {
-  width: 42%;
-  margin-left: 16px;
+  width: 70%;
+  margin-left: 17px;
+}
+html body .header .header-flex .h-header a span {
+  white-space: nowrap;
+  min-width: 0%;
+  width: 0%;
+  letter-spacing: 0px;
+  line-height: 1.23;
+  margin-left: 12px;
+  font-weight: 900;
+  font-size: 1.15rem;
+  vertical-align: center;
+}
+html body .header .header-flex .h-header a span strong {
+  font-size: 1.45rem;
 }
 html body .header .header-flex .header-nav {
-  width: 75%;
+  width: 65%;
   height: 56px;
 }
 html body .header .header-flex .header-nav .h-accordion {
@@ -178,7 +199,6 @@ html body article .mainvisual img {
      object-fit: cover;
 }
 html body article .black {
-  clear: both;
   width: 100%;
   height: 20%;
 }
