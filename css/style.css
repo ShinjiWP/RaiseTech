@@ -11,7 +11,7 @@ html {
   width: 100%;
 }
 html body {
-  font-family: sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 }
 html body .header {
   width: 100%;
@@ -86,7 +86,7 @@ html body .header .header-flex .header-nav .h-accordion .box .open {
   padding: 0 12px;
   /*ここと下の余白を合わせる*/
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
 }
 html body .header .header-flex .header-nav .h-accordion .box .open:hover {
   background-color: #d4f1f8;
@@ -108,8 +108,9 @@ html body .header .header-flex .header-nav .h-accordion .box .accordion-link {
 }
 html body .header .header-flex .header-nav .h-accordion .box .accordion-link li {
   width: 100%;
+  line-height: 48px;
   height: 48px;
-  /*プルダウンリストの高さを変えたら文章の位置が中心に来ていない*/
+  /*プルダウンリストの高さを変えたら文章の位置が中心に来ない。↑のline-hight合わせて直せた*/
   display: block;
   list-style-type: none;
   background-color: white;
@@ -119,10 +120,10 @@ html body .header .header-flex .header-nav .h-accordion .box .accordion-link li 
   display: block;
   width: 100%;
   text-decoration: none;
-  padding: 0px 60px 0px 13.5px;
+  padding: 0px 60px 0px 12px;
   /*ここと上の余白を合わせる*/
   background-color: #e7f8fc;
-  font-weight: solid;
+  font-weight: 400;
   color: #363535;
 }
 html body .header .header-flex .header-nav .h-accordion .box .accordion-link li a:hover {
@@ -190,11 +191,11 @@ html body article .top-circle {
 }
 html body article .top-circle-box {
   position: absolute;
-  width: 340px;
-  height: 280px;
+  width: 330px;
+  height: 262px;
   background-color: #fff;
   z-index: 8;
-  top: 100px;
+  top: 120px;
   left: 0;
   right: 0;
   margin: auto;
@@ -210,7 +211,7 @@ html body article .top-circle-box {
 }
 html body article .top-circle-box img {
   width: 68%;
-  margin: 40px auto 30px auto;
+  margin: 35px auto 25px auto;
 }
 html body .black {
   background-color: black;
