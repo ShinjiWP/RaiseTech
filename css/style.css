@@ -49,8 +49,8 @@ html body .header .header-flex .h-header a {
           align-items: center;
 }
 html body .header .header-flex .h-header a img {
-  width: 41%;
-  margin-left: 17px;
+  width: 42%;
+  margin-left: 16px;
 }
 html body .header .header-flex .header-nav {
   width: 75%;
@@ -87,6 +87,7 @@ html body .header .header-flex .header-nav .h-accordion .box .open {
   /*ここと下の余白を合わせる*/
   font-weight: 700;
   letter-spacing: 0.3px;
+  /*文字間の調整*/
 }
 html body .header .header-flex .header-nav .h-accordion .box .open:hover {
   background-color: #d4f1f8;
@@ -108,8 +109,8 @@ html body .header .header-flex .header-nav .h-accordion .box .accordion-link {
 }
 html body .header .header-flex .header-nav .h-accordion .box .accordion-link li {
   width: 100%;
-  line-height: 48px;
-  height: 48px;
+  line-height: 45px;
+  height: 45px;
   /*プルダウンリストの高さを変えたら文章の位置が中心に来ない。↑のline-hight合わせて直せた*/
   display: block;
   list-style-type: none;
@@ -120,7 +121,7 @@ html body .header .header-flex .header-nav .h-accordion .box .accordion-link li 
   display: block;
   width: 100%;
   text-decoration: none;
-  padding: 0px 60px 0px 12px;
+  padding: 0px 58px 0px 12px;
   /*ここと上の余白を合わせる*/
   background-color: #e7f8fc;
   font-weight: 400;
