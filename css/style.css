@@ -82,8 +82,8 @@ html body .header .header-flex .header-nav .h-accordion .box .open {
   width: 100%;
   height: 100%;
   cursor: pointer;
-  font-size: 1.2rem;
-  padding: 0 13.5px;
+  font-size: 1.25rem;
+  padding: 0 12px;
   /*ここと下の余白を合わせる*/
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -107,6 +107,9 @@ html body .header .header-flex .header-nav .h-accordion .box .accordion-link {
   position: absolute;
 }
 html body .header .header-flex .header-nav .h-accordion .box .accordion-link li {
+  width: 100%;
+  height: 48px;
+  /*プルダウンリストの高さを変えたら文章の位置が中心に来ていない*/
   display: block;
   list-style-type: none;
   background-color: white;
@@ -119,8 +122,8 @@ html body .header .header-flex .header-nav .h-accordion .box .accordion-link li 
   padding: 0px 60px 0px 13.5px;
   /*ここと上の余白を合わせる*/
   background-color: #e7f8fc;
-  font-weight: bold;
-  color: #494949;
+  font-weight: solid;
+  color: #363535;
 }
 html body .header .header-flex .header-nav .h-accordion .box .accordion-link li a:hover {
   background-color: #fff;
