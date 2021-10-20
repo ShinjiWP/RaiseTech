@@ -13,6 +13,7 @@ html {
 }
 html body {
   font-family: "Noto Sans JP", sans-serif;
+  /*画面下部の黒背景*/
 }
 html body .header {
   width: 100%;
@@ -160,7 +161,7 @@ html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .op
   opacity: 1;
   padding: 0 5px 0 0;
 }
-html body article {
+html body .article {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -178,7 +179,7 @@ html body article {
   -o-object-fit: cover;
      object-fit: cover;
 }
-html body article .mainvisual {
+html body .article .mainvisual {
   width: 130%;
   height: 570px;
   position: relative;
@@ -187,7 +188,7 @@ html body article .mainvisual {
   -o-object-fit: cover;
      object-fit: cover;
 }
-html body article .mainvisual img {
+html body .article .mainvisual img {
   width: 130%;
   height: 112%;
   position: absolute;
@@ -199,11 +200,14 @@ html body article .mainvisual img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-html body article .black {
+html body .article .black {
   width: 100%;
   height: 20%;
 }
-html body article .top-circle-box {
+html body .article .top-circle {
+  /*以下は画面下部の○とアイコン、説明文*/
+}
+html body .article .top-circle-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -227,18 +231,18 @@ html body article .top-circle-box {
           flex-direction: column;
   text-align: center;
 }
-html body article .top-circle-box img {
+html body .article .top-circle-box img {
   width: 68%;
   margin: 35px auto 5px auto;
 }
-html body article .top-circle-box p {
+html body .article .top-circle-box p {
   display: block;
   font-size: 1.28rem;
   font-weight: 700;
   line-height: 1.7;
   margin-top: 11px;
 }
-html body article .top-circle-box .button {
+html body .article .top-circle-box .button {
   background-color: #2498b3;
   width: 232px;
   height: 54px;
@@ -246,12 +250,37 @@ html body article .top-circle-box .button {
   border-radius: 3px;
   margin-top: 23px;
 }
-html body article .top-circle-box .button a {
+html body .article .top-circle-box .button a {
   font-size: 1.45rem;
   vertical-align: middle;
   text-decoration: none;
   color: white;
   font-weight: 700;
+}
+html body .article .top-circle .second-circle {
+  width: 80%;
+  height: 60%;
+  top: 430px;
+  left: 0;
+  /*position:absolute;を使用した画面中央配置の呪文3点セット*/
+  right: 0;
+  /*position:absolute;を使用した画面中央配置の呪文3点セット*/
+  margin: auto;
+  /*position:absolute;を使用した画面中央配置の呪文3点セット*/
+  z-index: 30;
+  background-color: #fff;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+html body .article .top-circle .second-circle-icon {
+  width: 30%;
+  height: 100%;
+  background-color: blue;
 }
 html body .black {
   background-color: black;
