@@ -35,7 +35,7 @@ html body .header .header-flex .h-header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 25%;
+  width: 28%;
   height: 56px;
   /*最速で稼げる～を入れる必要があるし、mixinかなんかでdisplay:none;を使ってウィンドウ幅で消すようにする必要がありそう*/
 }
@@ -66,17 +66,17 @@ html body .header .header-flex .h-header a span {
   min-width: 0%;
   width: 0%;
   letter-spacing: 0px;
-  line-height: 1.23;
+  line-height: 1.24;
   margin-left: 12px;
   font-weight: 900;
-  font-size: 1.15rem;
+  font-size: 1.14rem;
   vertical-align: center;
 }
 html body .header .header-flex .h-header a span strong {
   font-size: 1.45rem;
 }
 html body .header .header-flex .header-nav {
-  width: 70%;
+  width: 80%;
   height: 56px;
 }
 html body .header .header-flex .header-nav .h-accordion {
