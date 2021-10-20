@@ -195,10 +195,11 @@ html {
         height: 20%;
       }
       .top-circle {
-        display: flex;
-        justify-content: center;
+        // justify-content: center;
         // position: relative;
         &-box {
+          display: flex;
+          align-items: center;
           position: absolute;
           width: 330px;
           height: 262px;
@@ -214,9 +215,29 @@ html {
           text-align: center;
           img {
             width: 68%;
-            margin: 35px auto 25px auto;
+            margin: 35px auto 5px auto;
           }
           p {
+            display: block;
+            font-size: 1.28rem;
+            font-weight: 700;
+            line-height: 1.7;
+            margin-top: 11px;
+          }
+          .button {
+            background-color: #2498b3;
+            width: 232px;
+            height: 54px;
+            line-height: 52px;
+            border-radius: 3px;
+            margin-top: 23px;
+            a {
+              font-size: 1.45rem;
+              vertical-align: middle;
+              text-decoration: none;
+              color: white;
+              font-weight: 700;
+            }
           }
         }
       }
