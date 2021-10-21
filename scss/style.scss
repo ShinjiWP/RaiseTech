@@ -261,12 +261,32 @@ html {
             margin: 0 40px;
 
             .icon-box {
+              display: flex;
               width: 184px;
               height: 184px;
               border-radius: 50%;
               border: 5px solid black;
-
               background-color: white;
+              align-items: center;
+              justify-content: center;
+
+              .icon-position {
+                display: block;
+              }
+            }
+            .title {
+              text-align: center;
+              display: block;
+              margin: 8px auto;
+              font-size: 1.9rem;
+              color: white;
+            }
+            .description {
+              font-size: 1.3rem;
+              font-weight: 700;
+              text-align: left;
+              line-height: 1.7;
+              color: #fff;
             }
           }
         }
