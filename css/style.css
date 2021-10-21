@@ -36,12 +36,12 @@ html body .header .header-flex .h-header {
       -ms-flex-align: center;
           align-items: center;
   width: 28%;
-  height: 56px;
+  height: 70px;
   /*最速で稼げる～を入れる必要があるし、mixinかなんかでdisplay:none;を使ってウィンドウ幅で消すようにする必要がありそう*/
 }
 html body .header .header-flex .h-header a {
   width: 100%;
-  height: 56px;
+  height: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,42 +55,47 @@ html body .header .header-flex .h-header a {
       -ms-flex-pack: unset;
           justify-content: unset;
   color: black;
+  /*RaiseTechのブランドロゴ*/
+  /*最速で稼げる～のとこ*/
 }
 html body .header .header-flex .h-header a img {
   height: 33px;
-  width: 125px;
-  margin-left: 17px;
+  width: 158px;
+  margin-left: 20px;
 }
 html body .header .header-flex .h-header a span {
   white-space: nowrap;
   min-width: 0%;
   width: 0%;
   letter-spacing: 0px;
-  line-height: 1.24;
-  margin-left: 12px;
+  line-height: 1.3;
+  margin-left: 16px;
   font-weight: 900;
-  font-size: 1.14rem;
+  font-size: 1.4rem;
   vertical-align: center;
 }
 html body .header .header-flex .h-header a span strong {
-  font-size: 1.45rem;
+  font-size: 1.8rem;
 }
 html body .header .header-flex .header-nav {
   width: 80%;
-  height: 56px;
+  height: 70px;
 }
 html body .header .header-flex .header-nav .h-accordion {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  height: 100%;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
 html body .header .header-flex .header-nav .h-accordion .box {
-  height: 56px;
-  line-height: 56px;
+  height: 70px;
+  /*アコーディオンメニューの高さ*/
+  line-height: 70px;
+  /*ここも合わせる*/
   background-color: #fff;
 }
 html body .header .header-flex .header-nav .h-accordion .box:last-of-type {
@@ -105,11 +110,11 @@ html body .header .header-flex .header-nav .h-accordion .box .open {
   width: 100%;
   height: 100%;
   cursor: pointer;
-  font-size: 1.25rem;
-  padding: 0 12px;
+  font-size: 1.6rem;
+  padding: 0 14.8px;
   /*ここと下の余白を合わせる*/
   font-weight: 700;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.1px;
   /*文字間の調整*/
 }
 html body .header .header-flex .header-nav .h-accordion .box .open:hover {
@@ -132,19 +137,19 @@ html body .header .header-flex .header-nav .h-accordion .box .accordion-link {
 }
 html body .header .header-flex .header-nav .h-accordion .box .accordion-link li {
   width: 100%;
-  line-height: 45px;
-  height: 45px;
+  line-height: 56px;
+  height: 56px;
   /*プルダウンリストの高さを変えたら文章の位置が中心に来ない。↑のline-hight合わせて直せた*/
   display: block;
   list-style-type: none;
   background-color: white;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
 }
 html body .header .header-flex .header-nav .h-accordion .box .accordion-link li a {
   display: block;
   width: 100%;
   text-decoration: none;
-  padding: 0px 58px 0px 12px;
+  padding: 0px 60px 0px 15px;
   /*ここと上の余白を合わせる*/
   background-color: #e7f8fc;
   font-weight: 400;
@@ -181,7 +186,7 @@ html body .article {
 }
 html body .article .mainvisual {
   width: 130%;
-  height: 576px;
+  height: 720px;
   position: relative;
   overflow: hidden;
   /*はみ出したとこは隠す*/
