@@ -172,20 +172,20 @@ html {
       .mainvisual {
         width: 130%;
         // max-width: 1500px;
-        height: 570px;
+        height: 576px;
         position: relative;
         overflow: hidden; /*はみ出したとこは隠す*/
         object-fit: cover;
         img {
-          width: 130%;
+          width: 120%;
           // max-width: 1140px;
-          height: 112%;
+          height: 111%;
           // max-width: 130%;
           position: absolute;
           top: -4px;
           left: 50%;
           overflow: hidden;
-          margin-left: -65%; /*幅の半分のネガティブマージン？*/
+          margin-left: -60%; /*幅の半分のネガティブマージン？*/
           object-fit: cover;
           // z-index: 0;
         }
@@ -243,21 +243,31 @@ html {
         }
         /*以下は画面下部の○とアイコン、説明文*/
         .second-circle {
-          width: 80%;
+          width: 100%;
           height: 60%;
-          top: 430px;
-          left: 0; /*position:absolute;を使用した画面中央配置の呪文3点セット*/
+          top: 416px;
+          left: 0px; /*position:absolute;を使用した画面中央配置の呪文3点セット*/
           right: 0; /*position:absolute;を使用した画面中央配置の呪文3点セット*/
           margin: auto; /*position:absolute;を使用した画面中央配置の呪文3点セット*/
           z-index: 30;
-          background-color: #fff;
+          // background-color: #fff;
           position: absolute;
           display: flex;
           justify-content: center;
           &-icon {
-            width: 30%;
+            width: 184px;
             height: 100%;
-            background-color: blue;
+            // background-color: blue;
+            margin: 0 40px;
+
+            .icon-box {
+              width: 184px;
+              height: 184px;
+              border-radius: 50%;
+              border: 5px solid black;
+
+              background-color: white;
+            }
           }
         }
       }
@@ -266,7 +276,7 @@ html {
     .black {
       background-color: black;
       width: 100%;
-      height: 300px;
+      height: 100%;
       position: absolute;
       z-index: 10;
     }

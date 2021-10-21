@@ -181,7 +181,7 @@ html body .article {
 }
 html body .article .mainvisual {
   width: 130%;
-  height: 570px;
+  height: 576px;
   position: relative;
   overflow: hidden;
   /*はみ出したとこは隠す*/
@@ -189,13 +189,13 @@ html body .article .mainvisual {
      object-fit: cover;
 }
 html body .article .mainvisual img {
-  width: 130%;
-  height: 112%;
+  width: 120%;
+  height: 111%;
   position: absolute;
   top: -4px;
   left: 50%;
   overflow: hidden;
-  margin-left: -65%;
+  margin-left: -60%;
   /*幅の半分のネガティブマージン？*/
   -o-object-fit: cover;
      object-fit: cover;
@@ -258,17 +258,16 @@ html body .article .top-circle-box .button a {
   font-weight: 700;
 }
 html body .article .top-circle .second-circle {
-  width: 80%;
+  width: 100%;
   height: 60%;
-  top: 430px;
-  left: 0;
+  top: 416px;
+  left: 0px;
   /*position:absolute;を使用した画面中央配置の呪文3点セット*/
   right: 0;
   /*position:absolute;を使用した画面中央配置の呪文3点セット*/
   margin: auto;
   /*position:absolute;を使用した画面中央配置の呪文3点セット*/
   z-index: 30;
-  background-color: #fff;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -278,14 +277,21 @@ html body .article .top-circle .second-circle {
           justify-content: center;
 }
 html body .article .top-circle .second-circle-icon {
-  width: 30%;
+  width: 184px;
   height: 100%;
-  background-color: blue;
+  margin: 0 40px;
+}
+html body .article .top-circle .second-circle-icon .icon-box {
+  width: 184px;
+  height: 184px;
+  border-radius: 50%;
+  border: 5px solid black;
+  background-color: white;
 }
 html body .black {
   background-color: black;
   width: 100%;
-  height: 300px;
+  height: 100%;
   position: absolute;
   z-index: 10;
 }
