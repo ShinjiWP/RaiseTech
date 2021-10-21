@@ -28,7 +28,7 @@ html body .header .header-flex {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: white;
-  z-index: 10;
+  z-index: 100;
   /*z-indexではなくover-flow:hidden;を使用するのが正しい気がする*/
 }
 html body .header .header-flex .h-header {
@@ -158,8 +158,8 @@ html body .header .header-flex .header-nav .h-accordion .box .accordion-link li 
 html body .header .header-flex .header-nav .h-accordion .box .accordion-link li a:hover {
   background-color: #fff;
   color: #2498b3;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .accordion-link {
   height: auto;
@@ -183,6 +183,7 @@ html body .article {
   overflow: hidden;
   -o-object-fit: cover;
      object-fit: cover;
+  /*中心のボックス*/
 }
 html body .article .mainvisual {
   width: 130%;
@@ -220,11 +221,11 @@ html body .article .top-circle-box {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  width: 330px;
-  height: 262px;
+  width: 412px;
+  height: 327.5px;
   background-color: #fff;
   z-index: 8;
-  top: 120px;
+  top: 150px;
   left: 0;
   right: 0;
   margin: auto;
@@ -235,28 +236,29 @@ html body .article .top-circle-box {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
+  /*中心の青いボタン*/
 }
 html body .article .top-circle-box img {
   width: 68%;
-  margin: 35px auto 5px auto;
+  margin: 43px auto 5px auto;
 }
 html body .article .top-circle-box p {
   display: block;
-  font-size: 1.28rem;
+  font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.7;
-  margin-top: 11px;
+  margin-top: 17px;
 }
 html body .article .top-circle-box .button {
   background-color: #2498b3;
-  width: 232px;
-  height: 54px;
-  line-height: 52px;
+  width: 290px;
+  height: 66px;
+  line-height: 66px;
   border-radius: 3px;
-  margin-top: 23px;
+  margin-top: 29px;
 }
 html body .article .top-circle-box .button a {
-  font-size: 1.45rem;
+  font-size: 1.8rem;
   vertical-align: middle;
   text-decoration: none;
   color: white;
@@ -265,7 +267,7 @@ html body .article .top-circle-box .button a {
 html body .article .top-circle .second-circle {
   width: 100%;
   height: 60%;
-  top: 416px;
+  top: 520px;
   left: 0px;
   /*position:absolute;を使用した画面中央配置の呪文3点セット*/
   right: 0;
@@ -282,18 +284,19 @@ html body .article .top-circle .second-circle {
           justify-content: center;
 }
 html body .article .top-circle .second-circle-icon {
-  width: 184px;
+  width: 230px;
   height: 100%;
-  margin: 0 40px;
+  margin: 0 49px;
+  /*アイコン以下の説明文*/
 }
 html body .article .top-circle .second-circle-icon .icon-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 184px;
-  height: 184px;
+  width: 230px;
+  height: 230px;
   border-radius: 50%;
-  border: 5px solid black;
+  border: 6px solid black;
   background-color: white;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -308,12 +311,13 @@ html body .article .top-circle .second-circle-icon .icon-box .icon-position {
 html body .article .top-circle .second-circle-icon .title {
   text-align: center;
   display: block;
-  margin: 8px auto;
-  font-size: 1.9rem;
+  margin: 8px auto 11px auto;
+  font-size: 2.4rem;
   color: white;
 }
 html body .article .top-circle .second-circle-icon .description {
-  font-size: 1.3rem;
+  display: block;
+  font-size: 1.6rem;
   font-weight: 700;
   text-align: left;
   line-height: 1.7;
