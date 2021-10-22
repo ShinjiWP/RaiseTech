@@ -122,7 +122,7 @@ html {
                 letter-spacing: 0.1px; /*文字間の調整*/
                 transition: 0.7s; /*これで変化速度を変える*/
                 /*以下のメディアクエリを@mixinを利用してまとめて管理したい*/
-                @include mq(pc) {
+                @include mq-up(tab) {
                   padding: 0 10px;
                   transition: 0.7s;
                 }
