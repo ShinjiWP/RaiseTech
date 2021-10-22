@@ -1,8 +1,25 @@
-//variables
-$black: #2c363f;
-$red: #f16b6b;
-$blue: #2498b3;
-$open-hover: #d4f1f8;
+@use "variables";
+@use "mixin";
+// $breakpoint: (
+//   s: 'screen and
+//     (
+//       max-width: 767px,
+//     )',
+//   m: 'screen and
+//     (
+//       max-width: 1024px,
+//     )',
+//   l: 'screen and
+//     (
+//       max-width: 1280px,
+//     )',
+// );
+
+// @mixin mq($bp) {s
+//   @media #{map-get($breakpoint, $bp)} {
+//     @content;
+//   }
+// }
 
 * {
   box-sizing: border-box;
@@ -103,6 +120,12 @@ html {
                 padding: 0 14.8px; /*ここと下の余白を合わせる*/
                 font-weight: 700;
                 letter-spacing: 0.1px; /*文字間の調整*/
+                transition: 0.7s; /*これで変化速度を変える*/
+                /*以下のメディアクエリを@mixinを利用してまとめて管理したい*/
+                @include mq(pc) {
+                  padding: 0 10px;
+                  transition: 0.7s;
+                }
                 &:hover {
                   background-color: $open-hover;
                 }
