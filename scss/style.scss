@@ -178,7 +178,7 @@ html {
         position: relative;
         overflow: hidden; /*はみ出したとこは隠す*/
         object-fit: cover;
-        img {
+        .main-image {
           width: 120%;
           // max-width: 1140px;
           height: 111%;
@@ -189,8 +189,12 @@ html {
           overflow: hidden;
           margin-left: -60%; /*幅の半分のネガティブマージン？*/
           object-fit: cover;
-          // z-index: 0;
         }
+        // .app {
+        //   background-image: url(../img/bg-hero2.png);
+        //   background-size: 150%;
+        //   background-position: center top;
+        // }
       }
       .black {
         // clear: both;

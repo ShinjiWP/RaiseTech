@@ -194,7 +194,7 @@ html body .article .mainvisual {
   -o-object-fit: cover;
      object-fit: cover;
 }
-html body .article .mainvisual img {
+html body .article .mainvisual .main-image {
   width: 120%;
   height: 111%;
   position: absolute;
