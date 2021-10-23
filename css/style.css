@@ -39,7 +39,7 @@ html body .header .header-flex .h-header {
   height: 70px;
   /*最速で稼げる～を入れる必要があるし、mixinかなんかでdisplay:none;を使ってウィンドウ幅で消すようにする必要がありそう*/
 }
-html body .header .header-flex .h-header a {
+html body .header .header-flex .h-header .link {
   width: 100%;
   height: 70px;
   display: -webkit-box;
@@ -58,12 +58,12 @@ html body .header .header-flex .h-header a {
   /*RaiseTechのブランドロゴ*/
   /*最速で稼げる～のとこ*/
 }
-html body .header .header-flex .h-header a img {
+html body .header .header-flex .h-header .link .brand-logo {
   height: 33px;
   width: 158px;
   margin-left: 20px;
 }
-html body .header .header-flex .h-header a span {
+html body .header .header-flex .h-header .link .text-link {
   white-space: nowrap;
   min-width: 0%;
   width: 0%;
@@ -74,12 +74,23 @@ html body .header .header-flex .h-header a span {
   font-size: 1.4rem;
   vertical-align: center;
 }
-html body .header .header-flex .h-header a span strong {
+html body .header .header-flex .h-header .link .text-link .strong {
   font-size: 1.8rem;
+}
+@media screen and (max-width: 1265px) {
+  html body .header .header-flex .h-header .link .text-link {
+    display: none;
+  }
 }
 html body .header .header-flex .header-nav {
   width: 80%;
   height: 70px;
+  /*ウィンドウ幅が狭くなるとヘッダーナビが消える*/
+}
+@media screen and (max-width: 1183px) {
+  html body .header .header-flex .header-nav {
+    display: none;
+  }
 }
 html body .header .header-flex .header-nav .h-accordion {
   display: -webkit-box;
@@ -120,6 +131,14 @@ html body .header .header-flex .header-nav .h-accordion .box .open {
   transition: 0.7s;
   /*これで変化速度を変える*/
   /*以下のメディアクエリを@mixinを利用してまとめて管理したい*/
+  /*ウィンドウ幅が狭くなるとヘッダーナビのパディングが狭くなる*/
+}
+@media screen and (max-width: 1245px) {
+  html body .header .header-flex .header-nav .h-accordion .box .open {
+    padding: 0 10px;
+    -webkit-transition: 0.7s;
+    transition: 0.7s;
+  }
 }
 html body .header .header-flex .header-nav .h-accordion .box .open:hover {
   background-color: #d4f1f8;
@@ -134,9 +153,8 @@ html body .header .header-flex .header-nav .h-accordion .box .accordion-link {
   overflow: hidden;
   padding: 0 5px 0 0;
   /*padding:0;だと斜めに出てくるように見える*/
-  opacity: 0;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
   position: absolute;
 }
 html body .header .header-flex .header-nav .h-accordion .box .accordion-link li {
@@ -157,13 +175,13 @@ html body .header .header-flex .header-nav .h-accordion .box .accordion-link li 
   /*ここと上の余白を合わせる*/
   background-color: #e7f8fc;
   font-weight: 400;
-  color: #363535;
+  color: #1f1f1f;
 }
 html body .header .header-flex .header-nav .h-accordion .box .accordion-link li a:hover {
   background-color: #fff;
   color: #2498b3;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .accordion-link {
   height: auto;
