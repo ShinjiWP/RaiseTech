@@ -1,3 +1,4 @@
+/*test*/
 @use "variables";
 @use "mixin";
 // $breakpoint: (
@@ -23,6 +24,7 @@
 
 * {
   box-sizing: border-box;
+  
 }
 html {
   font-size: 62.5%; /*ベースを16px⇒10pxに出来た*/
