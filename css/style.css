@@ -27,8 +27,7 @@ html body .header .header-flex {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: white;
-  z-index: 100;
-  /*z-indexではなくover-flow:hidden;を使用するのが正しい気がする*/
+  z-index: 200;
 }
 html body .header .header-flex .h-header {
   -webkit-box-align: center;
@@ -36,7 +35,6 @@ html body .header .header-flex .h-header {
           align-items: center;
   width: 28%;
   height: 70px;
-  /*最速で稼げる～を入れる必要があるし、mixinかなんかでdisplay:none;を使ってウィンドウ幅で消すようにする必要がありそう*/
 }
 html body .header .header-flex .h-header .link {
   width: 100%;
@@ -85,11 +83,6 @@ html body .header .header-flex .header-nav {
   width: 80%;
   height: 70px;
   /*ウィンドウ幅が狭くなるとヘッダーナビが消える*/
-}
-@media screen and (max-width: 1183px) {
-  html body .header .header-flex .header-nav {
-    display: none;
-  }
 }
 html body .header .header-flex .header-nav .h-accordion {
   display: -webkit-box;
@@ -206,6 +199,11 @@ html body .article {
      object-fit: cover;
   /*中心のボックス*/
 }
+@media screen and (max-width: 760px) {
+  html body .article {
+    height: 300px;
+  }
+}
 html body .article .mainvisual {
   width: 130%;
   height: 720px;
@@ -240,6 +238,7 @@ html body .article .black {
   height: 20%;
 }
 html body .article .top-circle {
+  z-index: 100;
   /*以下は画面下部の○とアイコン、説明文*/
 }
 html body .article .top-circle-box {
