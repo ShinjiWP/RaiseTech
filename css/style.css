@@ -7,11 +7,10 @@
 html {
   font-size: 62.5%;
   /*ベースを16px⇒10pxに出来た*/
-  height: 100%;
-  width: 100%;
-  /*最速で～をブロック要素からはみ出して書けるようになったが、ヘッダーの画像がウィンドウ幅に左右されるようになってしまった*/
 }
 html body {
+  height: 100%;
+  width: 100%;
   font-family: "Noto Sans JP", sans-serif;
   /*画面下部の黒背景*/
 }
