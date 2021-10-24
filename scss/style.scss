@@ -1,5 +1,5 @@
 @use "variables";
-@use "mixin";
+// @use "mixin";
 // $breakpoint: (
 //   s: 'screen and
 //     (
@@ -26,7 +26,7 @@
 }
 html {
   font-size: 62.5%; /*ベースを16px⇒10pxに出来た*/
-    
+
   body {
     height: 100%;
     width: 100%;
@@ -223,6 +223,12 @@ html {
           overflow: hidden;
           margin-left: -60%; /*幅の半分のネガティブマージン？*/
           object-fit: cover;
+          @media screen and(max-width:760px) {
+            width: 120%;
+            height: 300px;
+            top: 40px;
+            
+          }
         }
         // .app {
         //   background-image: url(../img/bg-hero2.png);
@@ -285,8 +291,8 @@ html {
         }
         /*以下は画面下部の○とアイコン、説明文*/
         .second-circle {
-          width: 100%;
-          height: 60%;
+          width: 93%;
+          height: 50%;
           top: 520px;
           left: 0px; /*position:absolute;を使用した画面中央配置の呪文3点セット*/
           right: 0; /*position:absolute;を使用した画面中央配置の呪文3点セット*/
@@ -295,11 +301,17 @@ html {
           position: absolute;
           display: flex;
           justify-content: center;
+          @media screen and(max-width:760px) {
+            display: block;
+          }
           &-icon {
             width: 230px;
             height: 100%;
             // background-color: blue;
             margin: 0 49px;
+            @media screen and(max-width:1070px) {
+              margin: 0 auto;
+            }
 
             .icon-box {
               display: flex;
@@ -339,7 +351,7 @@ html {
     .black {
       background-color: black;
       width: 100%;
-      height: 100%;
+      height: 1200px;
       position: absolute;
       z-index: 10;
     }

@@ -227,6 +227,13 @@ html body .article .mainvisual .main-image {
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media screen and (max-width: 760px) {
+  html body .article .mainvisual .main-image {
+    width: 120%;
+    height: 300px;
+    top: 40px;
+  }
+}
 html body .article .black {
   width: 100%;
   height: 20%;
@@ -286,8 +293,8 @@ html body .article .top-circle-box .button a {
   font-weight: 700;
 }
 html body .article .top-circle .second-circle {
-  width: 100%;
-  height: 60%;
+  width: 93%;
+  height: 50%;
   top: 520px;
   left: 0px;
   /*position:absolute;を使用した画面中央配置の呪文3点セット*/
@@ -304,11 +311,21 @@ html body .article .top-circle .second-circle {
       -ms-flex-pack: center;
           justify-content: center;
 }
+@media screen and (max-width: 760px) {
+  html body .article .top-circle .second-circle {
+    display: block;
+  }
+}
 html body .article .top-circle .second-circle-icon {
   width: 230px;
   height: 100%;
   margin: 0 49px;
   /*アイコン以下の説明文*/
+}
+@media screen and (max-width: 1070px) {
+  html body .article .top-circle .second-circle-icon {
+    margin: 0 auto;
+  }
 }
 html body .article .top-circle .second-circle-icon .icon-box {
   display: -webkit-box;
@@ -347,7 +364,7 @@ html body .article .top-circle .second-circle-icon .description {
 html body .black {
   background-color: black;
   width: 100%;
-  height: 100%;
+  height: 1200px;
   position: absolute;
   z-index: 10;
 }
