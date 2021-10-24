@@ -229,9 +229,10 @@ html body .article .mainvisual .main-image {
 }
 @media screen and (max-width: 760px) {
   html body .article .mainvisual .main-image {
-    width: 120%;
+    width: 100%;
     height: 300px;
     top: 40px;
+    margin-left: -50%;
   }
 }
 html body .article .black {

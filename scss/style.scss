@@ -90,6 +90,9 @@ html {
         .header-nav {
           width: 80%;
           height: 70px;
+          // @media screen and(max-width:1183px) {
+          //   height: 50px;
+          // }
 
           /*ウィンドウ幅が狭くなるとヘッダーナビが消える*/
           @media screen and(max-width:1183px) {
@@ -224,10 +227,10 @@ html {
           margin-left: -60%; /*幅の半分のネガティブマージン？*/
           object-fit: cover;
           @media screen and(max-width:760px) {
-            width: 120%;
+            width: 100%;
             height: 300px;
             top: 40px;
-            
+            margin-left: -50%;
           }
         }
         // .app {
