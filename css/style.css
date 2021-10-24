@@ -93,6 +93,89 @@ html body .header .header-flex .header-nav .h-accordion {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  /*ここからハンバーガーメニュー作成テスト*/
+  /*ここからハンバーガーメニュー作成テスト*/
+  /*ここまでハンバーガーメニュー作成テスト*/
+}
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu {
+  display: none;
+}
+@media screen and (max-width: 1183px) {
+  html body .header .header-flex .header-nav .h-accordion .hamburger-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu #menu-btn-check {
+  display: none;
+}
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu .menu-btn {
+  height: 60px;
+  width: 60px;
+  z-index: 90;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu .menu-btn span,
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu .menu-btn span:before,
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu .menu-btn span:after {
+  content: "";
+  display: block;
+  height: 2px;
+  /*横棒の高さ*/
+  width: 25px;
+  /*横棒の幅*/
+  border-radius: 0px;
+  background-color: #3584bb;
+  position: absolute;
+}
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu .menu-btn span:before {
+  bottom: 8px;
+}
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu .menu-btn span:after {
+  top: 8px;
+}
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu #menu-btn-check:checked ~ .menu-btn span {
+  background-color: rgba(255, 255, 255, 0);
+  /*メニューオープン時は真ん中の線を透明にする*/
+}
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu #menu-btn-check:checked ~ .menu-btn span::before {
+  bottom: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  background-color: #ffffff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu #menu-btn-check:checked ~ .menu-btn span::after {
+  top: 0;
+  -webkit-transform: rotate(-315deg);
+          transform: rotate(-315deg);
+  background-color: #ffffff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu #menu-btn-check:checked + .menu-btn {
+  background-color: #3584bb;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu #menu-btn-check:checked + .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 html body .header .header-flex .header-nav .h-accordion .box {
   height: 70px;
