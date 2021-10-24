@@ -49,12 +49,12 @@ html body .header .header-flex {
   /*z-indexではなくover-flow:hidden;を使用するのが正しい気がする*/
 }
 html body .header .header-flex .h-header {
+  display: block;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   width: 28%;
-  height: 70px;
-  /*最速で稼げる～を入れる必要があるし、mixinかなんかでdisplay:none;を使ってウィンドウ幅で消すようにする必要がありそう*/
+  height: 60px;
 }
 html body .header .header-flex .h-header .link {
   width: 100%;
@@ -102,18 +102,16 @@ html body .header .header-flex .h-header .link .text-link .strong {
 html body .header .header-flex .header-nav {
   width: 80%;
   height: 70px;
-  /*ウィンドウ幅が狭くなるとヘッダーナビが消える*/
 }
 @media screen and (max-width: 1183px) {
   html body .header .header-flex .header-nav {
-    display: none;
+    height: 60px;
   }
 }
 html body .header .header-flex .header-nav .h-accordion {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /*これをnoneで縦に並ぶ*/
   width: 100%;
   height: 100%;
   -webkit-box-pack: end;
@@ -122,12 +120,24 @@ html body .header .header-flex .header-nav .h-accordion {
   /*ここからハンバーガーメニュー作成テスト*/
   /*ここからハンバーガーメニュー作成テスト*/
   /*ここまでハンバーガーメニュー作成テスト*/
-  /*ここまでハンバーガーメニュー作成テスト*/
 }
-html body .header .header-flex .header-nav .h-accordion #menu-btn-check {
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu {
   display: none;
 }
-html body .header .header-flex .header-nav .h-accordion .menu-btn {
+@media screen and (max-width: 1183px) {
+  html body .header .header-flex .header-nav .h-accordion .hamburger-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu #menu-btn-check {
+  display: none;
+}
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu .menu-btn {
   height: 60px;
   width: 60px;
   z-index: 90;
@@ -142,9 +152,9 @@ html body .header .header-flex .header-nav .h-accordion .menu-btn {
       -ms-flex-align: center;
           align-items: center;
 }
-html body .header .header-flex .header-nav .h-accordion .menu-btn span,
-html body .header .header-flex .header-nav .h-accordion .menu-btn span:before,
-html body .header .header-flex .header-nav .h-accordion .menu-btn span:after {
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu .menu-btn span,
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu .menu-btn span:before,
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu .menu-btn span:after {
   content: "";
   display: block;
   height: 2px;
@@ -155,17 +165,17 @@ html body .header .header-flex .header-nav .h-accordion .menu-btn span:after {
   background-color: #3584bb;
   position: absolute;
 }
-html body .header .header-flex .header-nav .h-accordion .menu-btn span:before {
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu .menu-btn span:before {
   bottom: 8px;
 }
-html body .header .header-flex .header-nav .h-accordion .menu-btn span:after {
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu .menu-btn span:after {
   top: 8px;
 }
-html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked ~ .menu-btn span {
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu #menu-btn-check:checked ~ .menu-btn span {
   background-color: rgba(255, 255, 255, 0);
   /*メニューオープン時は真ん中の線を透明にする*/
 }
-html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked ~ .menu-btn span::before {
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu #menu-btn-check:checked ~ .menu-btn span::before {
   bottom: 0;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
@@ -173,7 +183,7 @@ html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked 
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
-html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked ~ .menu-btn span::after {
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu #menu-btn-check:checked ~ .menu-btn span::after {
   top: 0;
   -webkit-transform: rotate(-315deg);
           transform: rotate(-315deg);
@@ -181,10 +191,15 @@ html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked 
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
-html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked + .menu-btn {
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu #menu-btn-check:checked + .menu-btn {
   background-color: #3584bb;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+html body .header .header-flex .header-nav .h-accordion .hamburger-menu #menu-btn-check:checked + .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 html body .header .header-flex .header-nav .h-accordion .box {
   height: 70px;
@@ -192,6 +207,14 @@ html body .header .header-flex .header-nav .h-accordion .box {
   line-height: 70px;
   /*ここも合わせる*/
   background-color: #fff;
+  /*ウィンドウ幅が狭くなるとヘッダーナビが消える*/
+}
+@media screen and (max-width: 1183px) {
+  html body .header .header-flex .header-nav .h-accordion .box {
+    display: none;
+    height: 60px;
+    line-height: 60px;
+  }
 }
 html body .header .header-flex .header-nav .h-accordion .box:last-of-type {
   background-color: #2498b3;

@@ -65,10 +65,10 @@ html {
         // overflow: hidden;
 
         .h-header {
-          // display: block;
+          display: block;
           align-items: center;
           width: 28%;
-          height: 70px; /*最速で稼げる～を入れる必要があるし、mixinかなんかでdisplay:none;を使ってウィンドウ幅で消すようにする必要がありそう*/
+          height: 60px;
           .link {
             width: 100%;
             height: 70px;
@@ -109,93 +109,106 @@ html {
         .header-nav {
           width: 80%;
           height: 70px;
-
-          /*ウィンドウ幅が狭くなるとヘッダーナビが消える*/
           @media screen and(max-width:1183px) {
-            display: none;
+            height: 60px;
           }
 
           .h-accordion {
-            display: flex; /*これをnoneで縦に並ぶ*/
+            display: flex;
+            // display: block;/*これをblockで縦に並ぶ*/
             width: 100%;
             height: 100%;
             justify-content: flex-end;
-
             /*ここからハンバーガーメニュー作成テスト*/
             /*ここからハンバーガーメニュー作成テスト*/
-            #menu-btn-check {
+            .hamburger-menu {
               display: none;
-            }
-            .menu-btn {
-              // position: fixed;
-              // top: 10px;
-              // right: 10px;
-              height: 60px;
-              width: 60px;
-              z-index: 90;
-              background-color: #ffffff;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-            }
-            .menu-btn span,
-            .menu-btn span:before,
-            .menu-btn span:after {
-              content: "";
-              display: block;
-              height: 2px; /*横棒の高さ*/
-              width: 25px; /*横棒の幅*/
-              border-radius: 0px;
-              background-color: #3584bb;
-              position: absolute;
-            }
-            .menu-btn span:before {
-              bottom: 8px;
-            }
-            .menu-btn span:after {
-              top: 8px;
-            }
-            #menu-btn-check:checked ~ .menu-btn span {
-              background-color: rgba(
-                255,
-                255,
-                255,
-                0
-              ); /*メニューオープン時は真ん中の線を透明にする*/
-            }
-            #menu-btn-check:checked ~ .menu-btn span::before {
-              bottom: 0;
-              transform: rotate(-45deg);
-              background-color: #ffffff;
-              transition: 0.2s;
-            }
-            #menu-btn-check:checked ~ .menu-btn span::after {
-              top: 0;
-              transform: rotate(-315deg);
-              background-color: #ffffff;
-              transition: 0.2s;
-            }
-            #menu-btn-check:checked + .menu-btn {
-              background-color: #3584bb;
-              transition: 0.2s;
-            }
-            /*ここまでハンバーガーメニュー作成テスト*/
-            /*ここまでハンバーガーメニュー作成テスト*/
+              @media screen and(max-width:1183px) {
+                display: flex;
+                justify-content: flex-end;
+              }
 
+              #menu-btn-check {
+                display: none;
+              }
+              .menu-btn {
+                // position: fixed;
+                // top: 10px;
+                // right: 10px;
+                height: 60px;
+                width: 60px;
+                z-index: 90;
+                background-color: #ffffff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+              .menu-btn span,
+              .menu-btn span:before,
+              .menu-btn span:after {
+                content: "";
+                display: block;
+                height: 2px; /*横棒の高さ*/
+                width: 25px; /*横棒の幅*/
+                border-radius: 0px;
+                background-color: #3584bb;
+                position: absolute;
+              }
+              .menu-btn span:before {
+                bottom: 8px;
+              }
+              .menu-btn span:after {
+                top: 8px;
+              }
+              #menu-btn-check:checked ~ .menu-btn span {
+                background-color: rgba(
+                  255,
+                  255,
+                  255,
+                  0
+                ); /*メニューオープン時は真ん中の線を透明にする*/
+              }
+              #menu-btn-check:checked ~ .menu-btn span::before {
+                bottom: 0;
+                transform: rotate(-45deg);
+                background-color: #ffffff;
+                transition: 0.2s;
+              }
+              #menu-btn-check:checked ~ .menu-btn span::after {
+                top: 0;
+                transform: rotate(-315deg);
+                background-color: #ffffff;
+                transition: 0.2s;
+              }
+              #menu-btn-check:checked + .menu-btn {
+                background-color: #3584bb;
+                transition: 0.2s;
+              }
+              #menu-btn-check:checked + .box {
+                display: flex;
+              }
+            }
+            /*ここまでハンバーガーメニュー作成テスト*/
 
             .box {
               height: 70px; /*アコーディオンメニューの高さ*/
               line-height: 70px; /*ここも合わせる*/
               background-color: #fff;
+              /*ウィンドウ幅が狭くなるとヘッダーナビが消える*/
+              @media screen and(max-width:1183px) {
+                display: none;
+                height: 60px;
+                line-height: 60px;
+              }
               &:last-of-type {
                 background-color: variables.$blue;
                 color: #fff;
               }
-              
+
               .hidden {
                 display: none;
               }
-              
+
               .open {
                 display: block;
                 width: 100%;
