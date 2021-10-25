@@ -110,6 +110,7 @@ html {
         .header-nav {
           width: 80%;
           height: 70px;
+          /*1180px以下で幅100%の領域を確保。ブランドロゴをfloatした*/
           @media screen and(max-width:1180px) {
             height: 50px;
             width: 100%;
@@ -125,6 +126,7 @@ html {
             width: 100%;
             height: 100%;
             justify-content: flex-end;
+            /*1180px以下でヘッダーナビを縦に並べる*/
             @media screen and (max-width: 1180px) {
               display: block;
             }
@@ -145,6 +147,7 @@ html {
               display: none;
               justify-content: center;
               align-items: center;
+              /*1180px以下でハンバーガーメニューを表示*/
               @media screen and (max-width: 1180px) {
                 display: flex;
               }
@@ -166,13 +169,9 @@ html {
                 top: 8px;
               }
             }
+            /*メニューオープン時は真ん中の線を透明にする*/
             #menu-btn-check:checked ~ .menu-btn span {
-              background-color: rgba(
-                255,
-                255,
-                255,
-                0
-              ); /*メニューオープン時は真ん中の線を透明にする*/
+              background-color: rgba(255, 255, 255, 0);
             }
             #menu-btn-check:checked ~ .menu-btn span::before {
               bottom: 0;
@@ -195,6 +194,10 @@ html {
               width: 100%;
               position: relative;
               top: 50px;
+              /*ハンバーガーメニューの時はお申込みを表示しない*/
+              &:last-of-type {
+                display: none;
+              }
             }
 
             /*ここまでハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
@@ -204,6 +207,7 @@ html {
               height: 70px; /*アコーディオンメニューの高さ*/
               line-height: 70px; /*ここも合わせる*/
               background-color: #fff;
+              /*1180px以下ではヘッダーナビを消す*/
               @media screen and(max-width:1180px) {
                 display: none;
                 height: 47px;
@@ -295,7 +299,7 @@ html {
         }
       }
     }
-    /*ここまでアコーディオンメニュー*/
+    /*ここまでアコーディオンメニューここまでアコーディオンメニューここまでアコーディオンメニュー*/
 
     .article {
       display: flex;
@@ -310,7 +314,8 @@ html {
       overflow: hidden;
       object-fit: cover;
       @media screen and(max-width:760px) {
-        height: 300px;
+        height: 320px;
+        background-position-x: 49%;
       }
 
       .mainvisual {
@@ -331,24 +336,18 @@ html {
           overflow: hidden;
           margin-left: -60%; /*幅の半分のネガティブマージン？*/
           object-fit: cover;
+          @media screen and(max-width:1180px) {
+            top: -25px;
+          }
           @media screen and(max-width:760px) {
             width: 100%;
-            height: 300px;
-            top: 40px;
+            height: 315px;
+            top: 24px;
             margin-left: -50%;
           }
         }
-        // .app {
-        //   background-image: url(../img/bg-hero2.png);
-        //   background-size: 150%;
-        //   background-position: center top;
-        // }
       }
-      .black {
-        // clear: both;
-        width: 100%;
-        height: 20%;
-      }
+
       /*中心のボックス*/
       .top-circle {
         z-index: 100;
@@ -371,11 +370,14 @@ html {
           display: flex;
           flex-direction: column;
           text-align: center;
+          @media screen and(max-width:1180px) {
+            top: 130px;
+          }
 
           @media screen and(max-width:760px) {
             width: 100%;
-            height: 180px;
-            top: 230px;
+            height: 155px;
+            top: 215px;
             border-radius: 0;
           }
 
@@ -392,6 +394,10 @@ html {
             font-weight: 700;
             line-height: 1.7;
             margin-top: 17px;
+            @media screen and(max-width:760px) {
+              font-size: 1.3rem;
+              margin-top: 15px;
+            }
           }
           /*中心の青いボタン*/
           .button {
@@ -401,12 +407,23 @@ html {
             line-height: 66px;
             border-radius: 3px;
             margin-top: 29px;
+            @media screen and(max-width:760px) {
+              width: 230px;
+              height: 41px;
+              line-height: 41px;
+              margin-top: 14px;
+              border-radius: 6px;
+            }
             a {
               font-size: 1.8rem;
               vertical-align: middle;
               text-decoration: none;
               color: white;
               font-weight: 700;
+              @media screen and(max-width:760px) {
+                font-size: 1.6rem;
+                vertical-align: top;
+              }
             }
           }
         }
@@ -422,9 +439,15 @@ html {
           position: absolute;
           display: flex;
           justify-content: center;
+          @media screen and(max-width:1180px) {
+            top: 501px;
+          }
+
           @media screen and(max-width:760px) {
             display: block;
+            top: 435px;
           }
+
           &-icon {
             width: 230px;
             height: 100%;
@@ -463,6 +486,9 @@ html {
               text-align: left;
               line-height: 1.7;
               color: #fff;
+              //   @media screen and(max-width:760px) {
+
+              // }
             }
           }
         }
@@ -475,6 +501,12 @@ html {
       height: 1200px;
       position: absolute;
       z-index: 10;
+      @media screen and(max-width:1180px) {
+        top: 700px;
+      }
+      @media screen and(max-width:760px) {
+        top: 300px;
+      }
     }
   }
 }
