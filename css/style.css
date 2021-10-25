@@ -12,6 +12,7 @@ html body {
   height: 100%;
   width: 100%;
   font-family: "Noto Sans JP", sans-serif;
+  /*ここまでアコーディオンメニュー*/
   /*画面下部の黒背景*/
 }
 html body .header {
@@ -28,6 +29,7 @@ html body .header .header-flex {
           justify-content: space-between;
   background-color: white;
   z-index: 200;
+  /*以下アコーディオンメニュー*/
 }
 html body .header .header-flex .h-header {
   -webkit-box-align: center;
