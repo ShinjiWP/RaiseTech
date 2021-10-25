@@ -58,6 +58,7 @@ html body .header .header-flex .h-header .link-image-text {
       -ms-flex-pack: unset;
           justify-content: unset;
   color: black;
+  /*1180px以下の時はfloatしてナビに100%の幅を渡す*/
   /*RaiseTechのブランドロゴ*/
   /*最速で稼げる～のとこ*/
 }
@@ -246,7 +247,6 @@ html body .header .header-flex .header-nav .h-accordion .box .open {
   -webkit-transition: 0.7s;
   transition: 0.7s;
   /*これで変化速度を変える*/
-  /*以下のメディアクエリを@mixinを利用してまとめて管理したい*/
   /*ウィンドウ幅が狭くなるとヘッダーナビのパディングが狭くなる*/
 }
 @media screen and (max-width: 1245px) {
@@ -272,6 +272,11 @@ html body .header .header-flex .header-nav .h-accordion .box .accordion-link {
   -webkit-transition: 0.2s;
   transition: 0.2s;
   position: absolute;
+}
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .header-nav .h-accordion .box .accordion-link {
+    z-index: 100;
+  }
 }
 html body .header .header-flex .header-nav .h-accordion .box .accordion-link li {
   width: 100%;
@@ -309,7 +314,8 @@ html body .article {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 100%;
+  max-width: 1980px;
+  height: 800px;
   background-image: url("../img/bg-hero3.png");
   background-attachment: fixed;
   /*背景画像固定*/
@@ -375,7 +381,7 @@ html body .article .top-circle-box {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  width: 412px;
+  width: 414px;
   height: 327.5px;
   background-color: #fff;
   z-index: 8;
@@ -406,7 +412,7 @@ html body .article .top-circle-box {
   }
 }
 html body .article .top-circle-box img {
-  width: 68%;
+  width: 67.5%;
   margin: 43px auto 5px auto;
 }
 @media screen and (max-width: 760px) {
@@ -419,7 +425,7 @@ html body .article .top-circle-box p {
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.7;
-  margin-top: 17px;
+  margin-top: 16px;
 }
 @media screen and (max-width: 760px) {
   html body .article .top-circle-box p {
@@ -430,8 +436,8 @@ html body .article .top-circle-box p {
 html body .article .top-circle-box .button {
   background-color: #2498b3;
   width: 290px;
-  height: 66px;
-  line-height: 66px;
+  height: 67px;
+  line-height: 67px;
   border-radius: 3px;
   margin-top: 29px;
 }
@@ -446,7 +452,7 @@ html body .article .top-circle-box .button {
 }
 html body .article .top-circle-box .button a {
   font-size: 1.8rem;
-  vertical-align: middle;
+  vertical-align: top;
   text-decoration: none;
   color: white;
   font-weight: 700;
@@ -460,7 +466,7 @@ html body .article .top-circle-box .button a {
 html body .article .top-circle .second-circle {
   width: 93%;
   height: 50%;
-  top: 520px;
+  top: 521px;
   left: 0px;
   /*position:absolute;を使用した画面中央配置の呪文3点セット*/
   right: 0;
@@ -538,6 +544,7 @@ html body .black {
   height: 1200px;
   position: absolute;
   z-index: 10;
+  top: 720px;
 }
 @media screen and (max-width: 1180px) {
   html body .black {
