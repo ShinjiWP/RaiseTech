@@ -36,9 +36,13 @@ html body .header .header-flex .h-header {
       -ms-flex-align: center;
           align-items: center;
   width: 28%;
-  height: 70px;
 }
-html body .header .header-flex .h-header .link {
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .h-header {
+    width: 0;
+  }
+}
+html body .header .header-flex .h-header .link-image-text {
   width: 100%;
   height: 70px;
   display: -webkit-box;
@@ -57,12 +61,24 @@ html body .header .header-flex .h-header .link {
   /*RaiseTechのブランドロゴ*/
   /*最速で稼げる～のとこ*/
 }
-html body .header .header-flex .h-header .link .brand-logo {
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .h-header .link-image-text {
+    height: 50px;
+    float: left;
+  }
+}
+html body .header .header-flex .h-header .link-image-text .brand-logo {
   height: 33px;
   width: 158px;
   margin-left: 20px;
 }
-html body .header .header-flex .h-header .link .text-link {
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .h-header .link-image-text .brand-logo {
+    height: 30px;
+    margin-left: 10px;
+  }
+}
+html body .header .header-flex .h-header .link-image-text .text-link {
   white-space: nowrap;
   min-width: 0%;
   width: 0%;
@@ -73,11 +89,11 @@ html body .header .header-flex .h-header .link .text-link {
   font-size: 1.4rem;
   vertical-align: center;
 }
-html body .header .header-flex .h-header .link .text-link .strong {
+html body .header .header-flex .h-header .link-image-text .text-link .strong {
   font-size: 1.8rem;
 }
 @media screen and (max-width: 1265px) {
-  html body .header .header-flex .h-header .link .text-link {
+  html body .header .header-flex .h-header .link-image-text .text-link {
     display: none;
   }
 }
@@ -85,6 +101,12 @@ html body .header .header-flex .header-nav {
   width: 80%;
   height: 70px;
   /*ウィンドウ幅が狭くなるとヘッダーナビが消える*/
+}
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .header-nav {
+    height: 50px;
+    width: 100%;
+  }
 }
 html body .header .header-flex .header-nav .h-accordion {
   display: -webkit-box;
@@ -95,34 +117,28 @@ html body .header .header-flex .header-nav .h-accordion {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  /*ここからハンバーガーメニュー作成テスト*/
-  /*ここからハンバーガーメニュー作成テスト*/
-  /*ここまでハンバーガーメニュー作成テスト*/
+  /*ここからハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
+  /*ここからハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
+  /*ここまでハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
+  /*ここからハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
 }
-html body .header .header-flex .header-nav .h-accordion .hamburger-menu {
-  display: none;
-}
-@media screen and (max-width: 1183px) {
-  html body .header .header-flex .header-nav .h-accordion .hamburger-menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .header-nav .h-accordion {
+    display: block;
   }
 }
-html body .header .header-flex .header-nav .h-accordion .hamburger-menu #menu-btn-check {
+html body .header .header-flex .header-nav .h-accordion #menu-btn-check {
   display: none;
 }
-html body .header .header-flex .header-nav .h-accordion .hamburger-menu .menu-btn {
-  height: 60px;
-  width: 60px;
+html body .header .header-flex .header-nav .h-accordion .menu-btn {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 50px;
+  width: 50px;
   z-index: 90;
   background-color: #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -130,9 +146,16 @@ html body .header .header-flex .header-nav .h-accordion .hamburger-menu .menu-bt
       -ms-flex-align: center;
           align-items: center;
 }
-html body .header .header-flex .header-nav .h-accordion .hamburger-menu .menu-btn span,
-html body .header .header-flex .header-nav .h-accordion .hamburger-menu .menu-btn span:before,
-html body .header .header-flex .header-nav .h-accordion .hamburger-menu .menu-btn span:after {
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .header-nav .h-accordion .menu-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+html body .header .header-flex .header-nav .h-accordion .menu-btn span,
+html body .header .header-flex .header-nav .h-accordion .menu-btn span:before,
+html body .header .header-flex .header-nav .h-accordion .menu-btn span:after {
   content: "";
   display: block;
   height: 2px;
@@ -143,17 +166,17 @@ html body .header .header-flex .header-nav .h-accordion .hamburger-menu .menu-bt
   background-color: #3584bb;
   position: absolute;
 }
-html body .header .header-flex .header-nav .h-accordion .hamburger-menu .menu-btn span:before {
+html body .header .header-flex .header-nav .h-accordion .menu-btn span:before {
   bottom: 8px;
 }
-html body .header .header-flex .header-nav .h-accordion .hamburger-menu .menu-btn span:after {
+html body .header .header-flex .header-nav .h-accordion .menu-btn span:after {
   top: 8px;
 }
-html body .header .header-flex .header-nav .h-accordion .hamburger-menu #menu-btn-check:checked ~ .menu-btn span {
+html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked ~ .menu-btn span {
   background-color: rgba(255, 255, 255, 0);
   /*メニューオープン時は真ん中の線を透明にする*/
 }
-html body .header .header-flex .header-nav .h-accordion .hamburger-menu #menu-btn-check:checked ~ .menu-btn span::before {
+html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked ~ .menu-btn span::before {
   bottom: 0;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
@@ -161,7 +184,7 @@ html body .header .header-flex .header-nav .h-accordion .hamburger-menu #menu-bt
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
-html body .header .header-flex .header-nav .h-accordion .hamburger-menu #menu-btn-check:checked ~ .menu-btn span::after {
+html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked ~ .menu-btn span::after {
   top: 0;
   -webkit-transform: rotate(-315deg);
           transform: rotate(-315deg);
@@ -169,15 +192,16 @@ html body .header .header-flex .header-nav .h-accordion .hamburger-menu #menu-bt
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
-html body .header .header-flex .header-nav .h-accordion .hamburger-menu #menu-btn-check:checked + .menu-btn {
+html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked + .menu-btn {
   background-color: #3584bb;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
-html body .header .header-flex .header-nav .h-accordion .hamburger-menu #menu-btn-check:checked + .box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked ~ .box {
+  display: block;
+  width: 100%;
+  position: relative;
+  top: 50px;
 }
 html body .header .header-flex .header-nav .h-accordion .box {
   height: 70px;
@@ -185,6 +209,13 @@ html body .header .header-flex .header-nav .h-accordion .box {
   line-height: 70px;
   /*ここも合わせる*/
   background-color: #fff;
+}
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .header-nav .h-accordion .box {
+    display: none;
+    height: 47px;
+    line-height: 47px;
+  }
 }
 html body .header .header-flex .header-nav .h-accordion .box:last-of-type {
   background-color: #2498b3;
