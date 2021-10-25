@@ -123,6 +123,7 @@ html body .header .header-flex .header-nav .h-accordion {
   /*ここからハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
   /*ここからハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
   /*メニューオープン時は真ん中の線を透明にする*/
+  /*ハンバーガーメニューをクリックするとアコーディオンメニューを表示する*/
   /*ここまでハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
   /*ここからハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
 }
@@ -259,6 +260,11 @@ html body .header .header-flex .header-nav .h-accordion .box .open {
 html body .header .header-flex .header-nav .h-accordion .box .open:hover {
   background-color: #d4f1f8;
 }
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .header-nav .h-accordion .box .open:hover {
+    background-color: #f3fafb;
+  }
+}
 html body .header .header-flex .header-nav .h-accordion .box .open-not-hover:hover {
   background-color: #2498b3;
   color: #fff;
@@ -288,6 +294,13 @@ html body .header .header-flex .header-nav .h-accordion .box .accordion-link li 
   background-color: white;
   font-size: 1.6rem;
 }
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .header-nav .h-accordion .box .accordion-link li {
+    height: 46px;
+    line-height: 46px;
+    font-size: 1.58rem;
+  }
+}
 html body .header .header-flex .header-nav .h-accordion .box .accordion-link li a {
   display: block;
   width: 100%;
@@ -298,16 +311,34 @@ html body .header .header-flex .header-nav .h-accordion .box .accordion-link li 
   font-weight: 400;
   color: #1f1f1f;
 }
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .header-nav .h-accordion .box .accordion-link li a {
+    background-color: #fff;
+    padding: 0 60px 0 26px;
+  }
+}
 html body .header .header-flex .header-nav .h-accordion .box .accordion-link li a:hover {
   background-color: #fff;
   color: #2498b3;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .header-nav .h-accordion .box .accordion-link li a:hover {
+    background-color: #f3fafb;
+  }
+}
 html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .accordion-link {
   height: auto;
   opacity: 1;
   padding: 0 5px 0 0;
+}
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .accordion-link {
+    position: relative;
+    padding: 0;
+    background-color: #f3fafb;
+  }
 }
 html body .article {
   display: -webkit-box;

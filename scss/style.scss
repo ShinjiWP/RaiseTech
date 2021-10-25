@@ -190,6 +190,7 @@ html {
               background-color: #3584bb;
               transition: 0.2s;
             }
+            /*ハンバーガーメニューをクリックするとアコーディオンメニューを表示する*/
             #menu-btn-check:checked ~ .box {
               display: block;
               width: 100%;
@@ -242,6 +243,9 @@ html {
                 }
                 &:hover {
                   background-color: variables.$open-hover;
+                  @media screen and (max-width: 1180px) {
+                    background-color: variables.$gray;
+                  }
                 }
               }
               .open-not-hover:hover {
@@ -269,6 +273,11 @@ html {
                   list-style-type: none;
                   background-color: white;
                   font-size: 1.6rem;
+                  @media screen and(max-width:1180px) {
+                    height: 46px;
+                    line-height: 46px;
+                    font-size: 1.58rem;
+                  }
 
                   a {
                     display: block;
@@ -278,10 +287,17 @@ html {
                     background-color: #e7f8fc;
                     font-weight: 400;
                     color: rgb(31, 31, 31);
+                    @media screen and (max-width: 1180px) {
+                      background-color: #fff;
+                      padding: 0 60px 0 26px;
+                    }
                     &:hover {
                       background-color: #fff;
                       color: variables.$blue;
                       transition: 0.2s;
+                      @media screen and (max-width: 1180px) {
+                        background-color: variables.$gray;
+                      }
                     }
                   }
                 }
@@ -291,6 +307,11 @@ html {
                 height: auto;
                 opacity: 1;
                 padding: 0 5px 0 0;
+                @media screen and (max-width: 1180px) {
+                  position: relative;
+                  padding: 0;
+                  background-color: variables.$gray;
+                }
               }
             }
           }
