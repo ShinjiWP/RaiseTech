@@ -60,6 +60,7 @@ html {
 
         .h-header {
           // display: block;
+          position: fixed;
           align-items: center;
           width: 28%;
           @media screen and(max-width:1180px) {
