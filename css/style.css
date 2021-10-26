@@ -18,11 +18,6 @@ html body {
 html body .header {
   width: 100%;
 }
-@media screen and (max-width: 1180px) {
-  html body .header {
-    float: left;
-  }
-}
 html body .header .header-flex {
   width: 100%;
   display: -webkit-box;
@@ -34,6 +29,7 @@ html body .header .header-flex {
           justify-content: space-between;
   background-color: white;
   z-index: 1000;
+  overflow: hidden;
   /*以下アコーディオンメニュー*/
 }
 html body .header .header-flex .h-header {
@@ -63,8 +59,6 @@ html body .header .header-flex .h-header .link-image-text {
       -ms-flex-pack: unset;
           justify-content: unset;
   color: black;
-  background-color: #fff;
-  /*1180px以下の時はfloatしてナビに100%の幅を渡す*/
   /*RaiseTechのブランドロゴ*/
   /*最速で稼げる～のとこ*/
 }
@@ -82,6 +76,7 @@ html body .header .header-flex .h-header .link-image-text .brand-logo {
   html body .header .header-flex .h-header .link-image-text .brand-logo {
     height: 30px;
     margin-left: 10px;
+    background-color: #fff;
   }
 }
 html body .header .header-flex .h-header .link-image-text .text-link {
@@ -124,6 +119,8 @@ html body .header .header-flex .header-nav .h-accordion {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  position: fixed;
+  z-index: 10;
   /*1180px以下でヘッダーナビを縦に並べる*/
   /*ここからハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
   /*ここからハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
@@ -272,7 +269,7 @@ html body .header .header-flex .header-nav .h-accordion .box .open-not-hover {
 }
 @media screen and (max-width: 1180px) {
   html body .header .header-flex .header-nav .h-accordion .box .open-not-hover {
-    visibility: hidden;
+    display: none;
   }
 }
 html body .header .header-flex .header-nav .h-accordion .box .open-not-hover:hover {
@@ -291,6 +288,11 @@ html body .header .header-flex .header-nav .h-accordion .box .accordion-link {
   top: -500px;
   z-index: -10;
 }
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-first {
+    top: 0px;
+  }
+}
 html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-second {
   left: 142px;
   /*ハンバーガーメニュー時のアコーディオンのトップ位置指定*/
@@ -302,7 +304,8 @@ html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-
 }
 @media screen and (max-width: 1180px) {
   html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-second {
-    bottom: 50px;
+    bottom: 0px;
+    left: 0;
   }
 }
 html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-forth {
@@ -392,11 +395,11 @@ html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .op
 }
 @media screen and (max-width: 1180px) {
   html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-first {
+    height: auto;
     top: 0;
     position: relative;
     padding: 0;
     background-color: #f3fafb;
-    height: 230px;
   }
 }
 html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-second {
@@ -463,14 +466,16 @@ html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .op
     background-color: #f3fafb;
   }
 }
-html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked ~ .box {
-  display: block;
-  width: 100%;
-  height: 100%;
-  /*ここをautoにすると背景が白くなる*/
-  position: absolute;
-  top: 50px;
-  z-index: 100;
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked ~ .box {
+    display: block;
+    width: 100%;
+    height: auto;
+    /*ここをautoにすると背景が白くなる*/
+    position: absolute;
+    top: 50px;
+    z-index: 100;
+  }
 }
 html body .article {
   display: -webkit-box;
@@ -704,7 +709,7 @@ html body .article .top-circle .second-circle-icon .description {
 html body .black {
   background-color: black;
   width: 100%;
-  height: 1200px;
+  height: 1400px;
   position: absolute;
   z-index: 10;
   top: 720px;
