@@ -36,6 +36,9 @@ html {
 
     .header {
       width: 100%;
+      @media screen and(max-width:1180px) {
+        float: left;
+      }
 
       .header-flex {
         width: 100%;
@@ -44,7 +47,7 @@ html {
         justify-content: space-between;
         // align-items: center;
         background-color: white;
-        z-index: 200;
+        z-index: 1000;
         // overflow: hidden;
 
         // @media screen and (max-width:1070px) {
@@ -70,10 +73,10 @@ html {
             flex-wrap: nowrap;
             justify-content: unset;
             color: black;
+            background-color: #fff;
             /*1180px以下の時はfloatしてナビに100%の幅を渡す*/
             @media screen and(max-width:1180px) {
               height: 50px;
-              float: left;
             }
 
             /*RaiseTechのブランドロゴ*/
@@ -191,34 +194,25 @@ html {
               transition: 0.2s;
             }
             /*ハンバーガーメニューをクリックするとアコーディオンメニューを表示する*/
-            #menu-btn-check:checked ~ .box {
-              display: block;
-              width: 100%;
-              position: relative;
-              top: 50px;
-              /*ハンバーガーメニューの時はお申込みを表示しない*/
-              &:last-of-type {
-                display: none;
-              }
+            @media screen and(max-width:1180px) {
             }
 
             /*ここまでハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
             /*ここからハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
 
             .box {
+              width: auto;
               height: 70px; /*アコーディオンメニューの高さ*/
               line-height: 70px; /*ここも合わせる*/
               background-color: #fff;
+              display: flex;
+              position: relative;
               /*1180px以下ではヘッダーナビを消す*/
               @media screen and(max-width:1180px) {
                 display: none;
-                height: 47px;
+                height: auto;
                 line-height: 47px;
-              }
-
-              &:last-of-type {
-                background-color: variables.$blue;
-                color: #fff;
+                top: 50px;
               }
 
               .hidden {
@@ -226,7 +220,7 @@ html {
               }
 
               .open {
-                display: block;
+                display: flex;
                 width: 100%;
                 height: 100%;
                 cursor: pointer;
@@ -235,6 +229,8 @@ html {
                 font-weight: 700;
                 letter-spacing: 0.1px; /*文字間の調整*/
                 transition: 0.7s; /*これで変化速度を変える*/
+                white-space: nowrap;
+                background-color: #fff;
 
                 /*ウィンドウ幅が狭くなるとヘッダーナビのパディングが狭くなる*/
                 @media screen and (max-width: 1245px) {
@@ -246,6 +242,13 @@ html {
                   @media screen and (max-width: 1180px) {
                     background-color: variables.$gray;
                   }
+                }
+              }
+              .open-not-hover {
+                color: white;
+                background-color: variables.$blue;
+                @media screen and(max-width:1180px) {
+                  visibility: hidden;
                 }
               }
               .open-not-hover:hover {
@@ -263,14 +266,54 @@ html {
                 position: absolute;
                 top: -500px;
                 z-index: -10;
+
+                &.al-second {
+                  left: 142px;
+                  @media screen and (max-width: 1245px) {
+                    left: 132px;
+                  }
+                  @media screen and(max-width:1180px) {
+                    bottom: 50px;
+                  }
+                  /*ハンバーガーメニュー時のアコーディオンのトップ位置指定*/
+                  // @media screen and (max-width: 1180px) {
+                  //   top: 50px;
+                  //   left: 0;
+                  // }
+                }
+                &.al-forth {
+                  left: 346px;
+                  @media screen and (max-width: 1245px) {
+                    left: 317px;
+                  }
+                }
+
+                &.al-fifth {
+                  left: 504px;
+                  @media screen and (max-width: 1245px) {
+                    left: 466px;
+                  }
+                }
+                &.al-sixth {
+                  left: 597px;
+                  @media screen and (max-width: 1245px) {
+                    left: 549px;
+                  }
+                }
+                &.al-seventh {
+                  @media screen and (max-width: 1180px) {
+                    display: hidden;
+                  }
+                }
+
                 @media screen and (max-width: 1180px) {
-                  z-index: 100;
+                  z-index: -10;
                 }
 
                 li {
                   width: 100%;
                   line-height: 56px;
-                  height: 56px; /*プルダウンリストの高さを変えたら文章の位置が中心に来ない。↑のline-hight合わせて直せた*/
+                  height: 56px; /*プルダウンリストの高さを変えたら文章の位置が中心に来ない。line-hight合わせて直せた*/
                   display: block;
                   list-style-type: none;
                   background-color: white;
@@ -281,7 +324,7 @@ html {
                     font-size: 1.58rem;
                   }
 
-                  a {
+                  .link {
                     display: block;
                     width: 100%;
                     text-decoration: none;
@@ -304,19 +347,89 @@ html {
                   }
                 }
               }
+              .hidden:hover + .open {
+                & + .al-first {
+                  // height: auto;
+                  opacity: 1;
+                  padding: 0 5px 0 0;
+                  top: 70px;
+                  transition: top 0.3s;
+                  @media screen and (max-width: 1180px) {
+                    top: 0;
+                    position: relative;
+                    padding: 0;
+                    background-color: variables.$gray;
+                    height: 230px;
+                  }
+                }
+                & + .al-second {
+                  // height: auto;
+                  opacity: 1;
+                  padding: 0 5px 0 0;
+                  top: 70px;
+                  transition: top 0.3s;
 
-              .hidden:hover + .open + .accordion-link {
-                // height: auto;
-                opacity: 1;
-                padding: 0 5px 0 0;
-                top: 70px;
-                transition: top 0.2s;
-                @media screen and (max-width: 1180px) {
-                  position: relative;
-                  padding: 0;
-                  background-color: variables.$gray;
+                  @media screen and (max-width: 1180px) {
+                    top: 0;
+                    left: 0;
+                    position: relative;
+                    padding: 0;
+                    background-color: variables.$gray;
+                  }
+                }
+                & + .al-forth {
+                  // height: auto;
+                  opacity: 1;
+                  padding: 0 5px 0 0;
+                  top: 70px;
+                  transition: top 0.3s;
+                  // }
+                  @media screen and (max-width: 1180px) {
+                    top: 0;
+                    left: 0;
+                    position: relative;
+                    padding: 0;
+                    background-color: variables.$gray;
+                  }
+                }
+                & + .al-fifth {
+                  // height: auto;
+                  opacity: 1;
+                  padding: 0 5px 0 0;
+                  top: 70px;
+                  transition: top 0.3s;
+                  @media screen and (max-width: 1180px) {
+                    top: 0;
+                    left: 0;
+                    position: relative;
+                    padding: 0;
+                    background-color: variables.$gray;
+                  }
+                }
+                & + .al-sixth {
+                  // height: auto;
+                  opacity: 1;
+                  padding: 0 5px 0 0;
+                  top: 70px;
+                  transition: top 0.3s;
+
+                  @media screen and (max-width: 1180px) {
+                    top: 0;
+                    left: 0;
+                    position: relative;
+                    padding: 0;
+                    background-color: variables.$gray;
+                  }
                 }
               }
+            }
+            #menu-btn-check:checked ~ .box {
+              display: block;
+              width: 100%;
+              height: 100%; /*ここをautoにすると背景が白くなる*/
+              position: absolute;
+              top: 50px;
+              z-index: 100;
             }
           }
         }
