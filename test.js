@@ -1,10 +1,17 @@
-// $(function () {
-//   $(window).on("scroll", function () {
-//     var scrollTop = $(window).scrollTop();
-//     var bgPosition = scrollTop / 4; //スクロール後のポジションを指定（値を大きくすると移動距離が小さくなる）
+//アコーディオンをクリックした時の動作
+$(".title").on("mouseenter", function () {
+  //タイトル要素をクリックしたら
+  $(".list-box").slideUp(500); //クラス名.boxがついたすべてのアコーディオンを閉じる
 
-//     if (bgPosition) {
-//       $(".app").css("background-position", "center top -" + bgPosition + "px");
-//     }
-//   });
-// });
+  var findElm = $(this).next(".list-box"); //タイトル直後のアコーディオンを行うエリアを取得
+
+  if ($(this).hasClass("close")) {
+    //タイトル要素にクラス名closeがあれば
+    $(this).removeClass("close"); //クラス名を除去
+  } else {
+    //それ以外は
+    $(".close").removeClass("close"); //クラス名closeを全て除去した後
+    $(this).addClass("close"); //クリックしたタイトルにクラス名closeを付与し
+    $(findElm).slideDown(200); //アコーディオンを開く
+  }
+});

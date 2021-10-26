@@ -106,6 +106,7 @@ html body .header .header-flex .h-header .link-image-text .text-link .strong {
 html body .header .header-flex .header-nav {
   width: 80%;
   height: 70px;
+  position: relative;
   /*1180px以下で幅100%の領域を確保。ブランドロゴをfloatした*/
   /*ウィンドウ幅が狭くなるとヘッダーナビが消える*/
 }
@@ -116,361 +117,42 @@ html body .header .header-flex .header-nav {
   }
 }
 html body .header .header-flex .header-nav .h-accordion {
+  width: 80%;
+  height: 70px;
+  line-height: 70px;
+  /*アコーディオン全体*/
+  /*アコーディオンタイトル*/
+  /*アコーディオンで現れるエリア*/
+  /*========= レイアウトのためのCSS ===============*/
+}
+html body .header .header-flex .header-nav .h-accordion .accordion-area {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  list-style: none;
   width: 100%;
-  height: 100%;
+  height: 70px;
+  line-height: 70px;
+  position: absolute;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  /*1180px以下でヘッダーナビを縦に並べる*/
-  /*ここからハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
-  /*ここからハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
-  /*メニューオープン時は真ん中の線を透明にする*/
-  /*ハンバーガーメニューをクリックするとアコーディオンメニューを表示する*/
-  /*ここまでハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
-  /*ここからハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
 }
-@media screen and (max-width: 1180px) {
-  html body .header .header-flex .header-nav .h-accordion {
-    display: block;
-  }
+html body .header .header-flex .header-nav .h-accordion section {
+  margin: 0 15px;
+  text-align: center;
 }
-html body .header .header-flex .header-nav .h-accordion #menu-btn-check {
-  display: none;
-}
-html body .header .header-flex .header-nav .h-accordion .menu-btn {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 50px;
-  width: 50px;
-  z-index: 90;
-  background-color: #ffffff;
-  display: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  /*1180px以下でハンバーガーメニューを表示*/
-}
-@media screen and (max-width: 1180px) {
-  html body .header .header-flex .header-nav .h-accordion .menu-btn {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-html body .header .header-flex .header-nav .h-accordion .menu-btn span,
-html body .header .header-flex .header-nav .h-accordion .menu-btn span:before,
-html body .header .header-flex .header-nav .h-accordion .menu-btn span:after {
-  content: "";
-  display: block;
-  height: 2px;
-  /*横棒の高さ*/
-  width: 25px;
-  /*横棒の幅*/
-  border-radius: 0px;
-  background-color: #3584bb;
-  position: absolute;
-}
-html body .header .header-flex .header-nav .h-accordion .menu-btn span:before {
-  bottom: 8px;
-}
-html body .header .header-flex .header-nav .h-accordion .menu-btn span:after {
-  top: 8px;
-}
-html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked ~ .menu-btn span {
-  background-color: rgba(255, 255, 255, 0);
-}
-html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked ~ .menu-btn span::before {
-  bottom: 0;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  background-color: #ffffff;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked ~ .menu-btn span::after {
-  top: 0;
-  -webkit-transform: rotate(-315deg);
-          transform: rotate(-315deg);
-  background-color: #ffffff;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked + .menu-btn {
-  background-color: #3584bb;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-html body .header .header-flex .header-nav .h-accordion .box {
-  width: auto;
-  height: 70px;
-  /*アコーディオンメニューの高さ*/
-  line-height: 70px;
-  /*ここも合わせる*/
-  background-color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  /*1180px以下ではヘッダーナビを消す*/
-}
-@media screen and (max-width: 1180px) {
-  html body .header .header-flex .header-nav .h-accordion .box {
-    display: none;
-    height: auto;
-    line-height: 47px;
-    top: 50px;
-  }
-}
-html body .header .header-flex .header-nav .h-accordion .box .hidden {
-  display: none;
-}
-html body .header .header-flex .header-nav .h-accordion .box .open {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
+html body .header .header-flex .header-nav .h-accordion section .title {
   font-size: 1.6rem;
-  padding: 0 14.8px;
-  /*ここと下の余白を合わせる*/
-  font-weight: 700;
-  letter-spacing: 0.1px;
-  /*文字間の調整*/
-  -webkit-transition: 0.7s;
-  transition: 0.7s;
-  /*これで変化速度を変える*/
-  white-space: nowrap;
-  background-color: #fff;
-  /*ウィンドウ幅が狭くなるとヘッダーナビのパディングが狭くなる*/
 }
-@media screen and (max-width: 1245px) {
-  html body .header .header-flex .header-nav .h-accordion .box .open {
-    padding: 0 10px;
-    -webkit-transition: 0.7s;
-    transition: 0.7s;
-  }
+html body .header .header-flex .header-nav .h-accordion .list-box {
+  display: none;
+  /*はじめは非表示*/
+  background: #f3f3f3;
+  padding: 3%;
 }
-html body .header .header-flex .header-nav .h-accordion .box .open:hover {
-  background-color: #d4f1f8;
-}
-@media screen and (max-width: 1180px) {
-  html body .header .header-flex .header-nav .h-accordion .box .open:hover {
-    background-color: #f3fafb;
-  }
-}
-html body .header .header-flex .header-nav .h-accordion .box .open-not-hover {
-  color: white;
-  background-color: #2498b3;
-}
-@media screen and (max-width: 1180px) {
-  html body .header .header-flex .header-nav .h-accordion .box .open-not-hover {
-    visibility: hidden;
-  }
-}
-html body .header .header-flex .header-nav .h-accordion .box .open-not-hover:hover {
-  background-color: #2498b3;
-  color: #fff;
-}
-html body .header .header-flex .header-nav .h-accordion .box .accordion-link {
-  display: block;
-  height: auto;
-  overflow: hidden;
-  padding: 0 5px 0 0;
-  /*padding:0;だと斜めに出てくるように見える*/
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  position: absolute;
-  top: -500px;
-  z-index: -10;
-}
-html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-second {
-  left: 142px;
-  /*ハンバーガーメニュー時のアコーディオンのトップ位置指定*/
-}
-@media screen and (max-width: 1245px) {
-  html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-second {
-    left: 132px;
-  }
-}
-@media screen and (max-width: 1180px) {
-  html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-second {
-    bottom: 50px;
-  }
-}
-html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-forth {
-  left: 346px;
-}
-@media screen and (max-width: 1245px) {
-  html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-forth {
-    left: 317px;
-  }
-}
-html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-fifth {
-  left: 504px;
-}
-@media screen and (max-width: 1245px) {
-  html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-fifth {
-    left: 466px;
-  }
-}
-html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-sixth {
-  left: 597px;
-}
-@media screen and (max-width: 1245px) {
-  html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-sixth {
-    left: 549px;
-  }
-}
-@media screen and (max-width: 1180px) {
-  html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-seventh {
-    display: hidden;
-  }
-}
-@media screen and (max-width: 1180px) {
-  html body .header .header-flex .header-nav .h-accordion .box .accordion-link {
-    z-index: -10;
-  }
-}
-html body .header .header-flex .header-nav .h-accordion .box .accordion-link li {
-  width: 100%;
-  line-height: 56px;
-  height: 56px;
-  /*プルダウンリストの高さを変えたら文章の位置が中心に来ない。line-hight合わせて直せた*/
-  display: block;
+html body .header .header-flex .header-nav .h-accordion .list-box li {
   list-style-type: none;
-  background-color: white;
-  font-size: 1.6rem;
-}
-@media screen and (max-width: 1180px) {
-  html body .header .header-flex .header-nav .h-accordion .box .accordion-link li {
-    height: 46px;
-    line-height: 46px;
-    font-size: 1.58rem;
-  }
-}
-html body .header .header-flex .header-nav .h-accordion .box .accordion-link li .link {
-  display: block;
-  width: 100%;
-  text-decoration: none;
-  padding: 0px 60px 0px 15px;
-  /*ここと上の余白を合わせる*/
-  background-color: #e7f8fc;
-  font-weight: 400;
-  color: #1f1f1f;
-}
-@media screen and (max-width: 1180px) {
-  html body .header .header-flex .header-nav .h-accordion .box .accordion-link li .link {
-    background-color: #fff;
-    padding: 0 60px 0 26px;
-  }
-}
-html body .header .header-flex .header-nav .h-accordion .box .accordion-link li .link:hover {
-  background-color: #fff;
-  color: #2498b3;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-@media screen and (max-width: 1180px) {
-  html body .header .header-flex .header-nav .h-accordion .box .accordion-link li .link:hover {
-    background-color: #f3fafb;
-  }
-}
-html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-first {
-  opacity: 1;
-  padding: 0 5px 0 0;
-  top: 70px;
-  -webkit-transition: top 0.3s;
-  transition: top 0.3s;
-}
-@media screen and (max-width: 1180px) {
-  html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-first {
-    top: 0;
-    position: relative;
-    padding: 0;
-    background-color: #f3fafb;
-    height: 230px;
-  }
-}
-html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-second {
-  opacity: 1;
-  padding: 0 5px 0 0;
-  top: 70px;
-  -webkit-transition: top 0.3s;
-  transition: top 0.3s;
-}
-@media screen and (max-width: 1180px) {
-  html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-second {
-    top: 0;
-    left: 0;
-    position: relative;
-    padding: 0;
-    background-color: #f3fafb;
-  }
-}
-html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-forth {
-  opacity: 1;
-  padding: 0 5px 0 0;
-  top: 70px;
-  -webkit-transition: top 0.3s;
-  transition: top 0.3s;
-}
-@media screen and (max-width: 1180px) {
-  html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-forth {
-    top: 0;
-    left: 0;
-    position: relative;
-    padding: 0;
-    background-color: #f3fafb;
-  }
-}
-html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-fifth {
-  opacity: 1;
-  padding: 0 5px 0 0;
-  top: 70px;
-  -webkit-transition: top 0.3s;
-  transition: top 0.3s;
-}
-@media screen and (max-width: 1180px) {
-  html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-fifth {
-    top: 0;
-    left: 0;
-    position: relative;
-    padding: 0;
-    background-color: #f3fafb;
-  }
-}
-html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-sixth {
-  opacity: 1;
-  padding: 0 5px 0 0;
-  top: 70px;
-  -webkit-transition: top 0.3s;
-  transition: top 0.3s;
-}
-@media screen and (max-width: 1180px) {
-  html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-sixth {
-    top: 0;
-    left: 0;
-    position: relative;
-    padding: 0;
-    background-color: #f3fafb;
-  }
-}
-html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked ~ .box {
-  display: block;
-  width: 100%;
-  height: 100%;
-  /*ここをautoにすると背景が白くなる*/
-  position: absolute;
-  top: 50px;
-  z-index: 100;
 }
 html body .article {
   display: -webkit-box;
