@@ -202,34 +202,35 @@ html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked 
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
-html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked ~ .box {
-  display: block;
-  width: 100%;
-  position: relative;
-  top: 50px;
-  /*ハンバーガーメニューの時はお申込みを表示しない*/
-}
-html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked ~ .box:last-of-type {
-  display: none;
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .header-nav .h-accordion #menu-btn-check:checked + .box {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50px;
+  }
 }
 html body .header .header-flex .header-nav .h-accordion .box {
+  width: auto;
   height: 70px;
   /*アコーディオンメニューの高さ*/
   line-height: 70px;
   /*ここも合わせる*/
   background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
   /*1180px以下ではヘッダーナビを消す*/
 }
 @media screen and (max-width: 1180px) {
   html body .header .header-flex .header-nav .h-accordion .box {
     display: none;
-    height: 47px;
+    height: auto;
     line-height: 47px;
+    top: 50px;
   }
-}
-html body .header .header-flex .header-nav .h-accordion .box:last-of-type {
-  background-color: #2498b3;
-  color: #fff;
 }
 html body .header .header-flex .header-nav .h-accordion .box .hidden {
   display: none;
@@ -248,7 +249,17 @@ html body .header .header-flex .header-nav .h-accordion .box .open {
   -webkit-transition: 0.7s;
   transition: 0.7s;
   /*これで変化速度を変える*/
+  white-space: nowrap;
   /*ウィンドウ幅が狭くなるとヘッダーナビのパディングが狭くなる*/
+}
+html body .header .header-flex .header-nav .h-accordion .box .open:last-of-type {
+  background-color: #2498b3;
+  color: #fff;
+}
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .header-nav .h-accordion .box .open:last-of-type {
+    display: none;
+  }
 }
 @media screen and (max-width: 1245px) {
   html body .header .header-flex .header-nav .h-accordion .box .open {
@@ -264,6 +275,10 @@ html body .header .header-flex .header-nav .h-accordion .box .open:hover {
   html body .header .header-flex .header-nav .h-accordion .box .open:hover {
     background-color: #f3fafb;
   }
+}
+html body .header .header-flex .header-nav .h-accordion .box .open-not-hover {
+  color: white;
+  background-color: #2498b3;
 }
 html body .header .header-flex .header-nav .h-accordion .box .open-not-hover:hover {
   background-color: #2498b3;
@@ -281,9 +296,47 @@ html body .header .header-flex .header-nav .h-accordion .box .accordion-link {
   top: -500px;
   z-index: -10;
 }
+html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-second {
+  left: 142px;
+  /*ハンバーガーメニュー時のアコーディオンのトップ位置指定*/
+}
+@media screen and (max-width: 1245px) {
+  html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-second {
+    left: 132px;
+  }
+}
+html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-forth {
+  left: 346px;
+}
+@media screen and (max-width: 1245px) {
+  html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-forth {
+    left: 317px;
+  }
+}
+html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-fifth {
+  left: 504px;
+}
+@media screen and (max-width: 1245px) {
+  html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-fifth {
+    left: 466px;
+  }
+}
+html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-sixth {
+  left: 597px;
+}
+@media screen and (max-width: 1245px) {
+  html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-sixth {
+    left: 549px;
+  }
+}
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .header-nav .h-accordion .box .accordion-link.al-seventh {
+    display: hidden;
+  }
+}
 @media screen and (max-width: 1180px) {
   html body .header .header-flex .header-nav .h-accordion .box .accordion-link {
-    z-index: 100;
+    z-index: -10;
   }
 }
 html body .header .header-flex .header-nav .h-accordion .box .accordion-link li {
@@ -303,7 +356,7 @@ html body .header .header-flex .header-nav .h-accordion .box .accordion-link li 
     font-size: 1.58rem;
   }
 }
-html body .header .header-flex .header-nav .h-accordion .box .accordion-link li a {
+html body .header .header-flex .header-nav .h-accordion .box .accordion-link li .link {
   display: block;
   width: 100%;
   text-decoration: none;
@@ -314,31 +367,96 @@ html body .header .header-flex .header-nav .h-accordion .box .accordion-link li 
   color: #1f1f1f;
 }
 @media screen and (max-width: 1180px) {
-  html body .header .header-flex .header-nav .h-accordion .box .accordion-link li a {
+  html body .header .header-flex .header-nav .h-accordion .box .accordion-link li .link {
     background-color: #fff;
     padding: 0 60px 0 26px;
   }
 }
-html body .header .header-flex .header-nav .h-accordion .box .accordion-link li a:hover {
+html body .header .header-flex .header-nav .h-accordion .box .accordion-link li .link:hover {
   background-color: #fff;
   color: #2498b3;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
 @media screen and (max-width: 1180px) {
-  html body .header .header-flex .header-nav .h-accordion .box .accordion-link li a:hover {
+  html body .header .header-flex .header-nav .h-accordion .box .accordion-link li .link:hover {
     background-color: #f3fafb;
   }
 }
-html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .accordion-link {
+html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-first {
   opacity: 1;
   padding: 0 5px 0 0;
   top: 70px;
-  -webkit-transition: top 0.2s;
-  transition: top 0.2s;
+  -webkit-transition: top 0.3s;
+  transition: top 0.3s;
 }
 @media screen and (max-width: 1180px) {
-  html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .accordion-link {
+  html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-first {
+    top: 0;
+    position: relative;
+    padding: 0;
+    background-color: #f3fafb;
+  }
+}
+html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-second {
+  opacity: 1;
+  padding: 0 5px 0 0;
+  top: 70px;
+  -webkit-transition: top 0.3s;
+  transition: top 0.3s;
+}
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-second {
+    top: 0;
+    left: 0;
+    position: relative;
+    padding: 0;
+    background-color: #f3fafb;
+  }
+}
+html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-forth {
+  opacity: 1;
+  padding: 0 5px 0 0;
+  top: 70px;
+  -webkit-transition: top 0.3s;
+  transition: top 0.3s;
+}
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-forth {
+    top: 0;
+    left: 0;
+    position: relative;
+    padding: 0;
+    background-color: #f3fafb;
+  }
+}
+html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-fifth {
+  opacity: 1;
+  padding: 0 5px 0 0;
+  top: 70px;
+  -webkit-transition: top 0.3s;
+  transition: top 0.3s;
+}
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-fifth {
+    top: 0;
+    left: 0;
+    position: relative;
+    padding: 0;
+    background-color: #f3fafb;
+  }
+}
+html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-sixth {
+  opacity: 1;
+  padding: 0 5px 0 0;
+  top: 70px;
+  -webkit-transition: top 0.3s;
+  transition: top 0.3s;
+}
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-sixth {
+    top: 0;
+    left: 0;
     position: relative;
     padding: 0;
     background-color: #f3fafb;
