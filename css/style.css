@@ -271,13 +271,15 @@ html body .header .header-flex .header-nav .h-accordion .box .open-not-hover:hov
 }
 html body .header .header-flex .header-nav .h-accordion .box .accordion-link {
   display: block;
-  height: 0;
+  height: auto;
   overflow: hidden;
   padding: 0 5px 0 0;
   /*padding:0;だと斜めに出てくるように見える*/
   -webkit-transition: 0.2s;
   transition: 0.2s;
   position: absolute;
+  top: -500px;
+  z-index: -10;
 }
 @media screen and (max-width: 1180px) {
   html body .header .header-flex .header-nav .h-accordion .box .accordion-link {
@@ -329,9 +331,11 @@ html body .header .header-flex .header-nav .h-accordion .box .accordion-link li 
   }
 }
 html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .accordion-link {
-  height: auto;
   opacity: 1;
   padding: 0 5px 0 0;
+  top: 70px;
+  -webkit-transition: top 0.2s;
+  transition: top 0.2s;
 }
 @media screen and (max-width: 1180px) {
   html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .accordion-link {

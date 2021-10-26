@@ -255,12 +255,14 @@ html {
 
               .accordion-link {
                 display: block;
-                height: 0;
+                height: auto;
                 overflow: hidden;
                 padding: 0 5px 0 0; /*padding:0;だと斜めに出てくるように見える*/
                 // opacity: 0;
                 transition: 0.2s;
                 position: absolute;
+                top: -500px;
+                z-index: -10;
                 @media screen and (max-width: 1180px) {
                   z-index: 100;
                 }
@@ -304,9 +306,11 @@ html {
               }
 
               .hidden:hover + .open + .accordion-link {
-                height: auto;
+                // height: auto;
                 opacity: 1;
                 padding: 0 5px 0 0;
+                top: 70px;
+                transition: top 0.2s;
                 @media screen and (max-width: 1180px) {
                   position: relative;
                   padding: 0;
