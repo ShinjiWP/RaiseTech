@@ -125,7 +125,6 @@ html body .header .header-flex .header-nav .h-accordion {
   /*ここからハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
   /*ここからハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
   /*メニューオープン時は真ん中の線を透明にする*/
-  /*ハンバーガーメニューをクリックするとアコーディオンメニューを表示する*/
   /*ここまでハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
   /*ここからハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
 }
@@ -152,7 +151,10 @@ html body .header .header-flex .header-nav .h-accordion .menu-btn {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   /*1180px以下でハンバーガーメニューを表示*/
+  /*ハンバーガーメニューが回る前の状態にもtransitionを設定することで逆再生できる*/
 }
 @media screen and (max-width: 1180px) {
   html body .header .header-flex .header-nav .h-accordion .menu-btn {
@@ -173,6 +175,10 @@ html body .header .header-flex .header-nav .h-accordion .menu-btn span:after {
   border-radius: 0px;
   background-color: #3584bb;
   position: absolute;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 html body .header .header-flex .header-nav .h-accordion .menu-btn span:before {
   bottom: 8px;
@@ -216,6 +222,7 @@ html body .header .header-flex .header-nav .h-accordion .box {
   display: flex;
   position: relative;
   /*1180px以下ではヘッダーナビを消す*/
+  /*アコーディオンメニューの十字*/
 }
 @media screen and (max-width: 1180px) {
   html body .header .header-flex .header-nav .h-accordion .box {
@@ -227,6 +234,11 @@ html body .header .header-flex .header-nav .h-accordion .box {
 }
 html body .header .header-flex .header-nav .h-accordion .box .hidden {
   display: none;
+}
+html body .header .header-flex .header-nav .h-accordion .box #check1:hover ~ .open span::after {
+  opacity: 0;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 html body .header .header-flex .header-nav .h-accordion .box .open {
   display: -webkit-box;
@@ -246,7 +258,50 @@ html body .header .header-flex .header-nav .h-accordion .box .open {
   /*これで変化速度を変える*/
   white-space: nowrap;
   background-color: #fff;
+  position: relative;
+  /*追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加*/
   /*ウィンドウ幅が狭くなるとヘッダーナビのパディングが狭くなる*/
+}
+@media screen and (max-width: 1180px) {
+  html body .header .header-flex .header-nav .h-accordion .box .open span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 46px;
+    width: 46px;
+    position: absolute;
+    top: 0;
+    right: 2px;
+  }
+  html body .header .header-flex .header-nav .h-accordion .box .open span:before,
+html body .header .header-flex .header-nav .h-accordion .box .open span:after {
+    content: "";
+    display: block;
+    height: 1.5px;
+    /*横棒の高さ*/
+    width: 24px;
+    /*横棒の幅*/
+    border-radius: 0px;
+    background-color: #000;
+    position: absolute;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  html body .header .header-flex .header-nav .h-accordion .box .open span:before {
+    bottom: 22px;
+  }
+  html body .header .header-flex .header-nav .h-accordion .box .open span:after {
+    top: 23px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
 }
 @media screen and (max-width: 1245px) {
   html body .header .header-flex .header-nav .h-accordion .box .open {
@@ -386,6 +441,8 @@ html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .op
   top: 70px;
   -webkit-transition: top 0.3s;
   transition: top 0.3s;
+  /*ホバーすると下の見出しを押し下げて展開するアコーディオンメニューを実現*/
+  /*position:static;で高さを指定できるようにするのが大事*/
 }
 @media screen and (max-width: 1180px) {
   html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-first {
@@ -407,7 +464,7 @@ html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .op
 }
 @media screen and (max-width: 1180px) {
   html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-second {
-    height: 230px;
+    height: 322px;
     position: static;
     visibility: visible;
     z-index: 500;
@@ -425,11 +482,13 @@ html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .op
 }
 @media screen and (max-width: 1180px) {
   html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-forth {
-    top: 0;
-    left: 0;
-    position: relative;
+    height: 92px;
+    position: static;
+    visibility: visible;
+    z-index: 500;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
     padding: 0;
-    background-color: #f3fafb;
   }
 }
 html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-fifth {
@@ -441,11 +500,13 @@ html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .op
 }
 @media screen and (max-width: 1180px) {
   html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-fifth {
-    top: 0;
-    left: 0;
-    position: relative;
+    height: 92px;
+    position: static;
+    visibility: visible;
+    z-index: 500;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
     padding: 0;
-    background-color: #f3fafb;
   }
 }
 html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-sixth {
@@ -457,11 +518,13 @@ html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .op
 }
 @media screen and (max-width: 1180px) {
   html body .header .header-flex .header-nav .h-accordion .box .hidden:hover + .open + .al-sixth {
-    top: 0;
-    left: 0;
-    position: relative;
+    height: 92px;
+    position: static;
+    visibility: visible;
+    z-index: 500;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
     padding: 0;
-    background-color: #f3fafb;
   }
 }
 @media screen and (max-width: 1180px) {

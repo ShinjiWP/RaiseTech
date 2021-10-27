@@ -158,10 +158,12 @@ html {
               display: none;
               justify-content: center;
               align-items: center;
+              transition: 0.3s;
               /*1180px以下でハンバーガーメニューを表示*/
               @media screen and (max-width: 1180px) {
                 display: flex;
               }
+              /*ハンバーガーメニューが回る前の状態にもtransitionを設定することで逆再生できる*/
               span,
               span:before,
               span:after {
@@ -172,6 +174,8 @@ html {
                 border-radius: 0px;
                 background-color: #3584bb;
                 position: absolute;
+                transform: rotate(0);
+                transition: 0.3s;
               }
               span:before {
                 bottom: 8px;
@@ -200,9 +204,6 @@ html {
               background-color: #3584bb;
               transition: 0.2s;
             }
-            /*ハンバーガーメニューをクリックするとアコーディオンメニューを表示する*/
-            @media screen and(max-width:1180px) {
-            }
 
             /*ここまでハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
             /*ここからハンバーガーメニュー作成テストここまでハンバーガーメニュー作成テスト*/
@@ -225,6 +226,11 @@ html {
               .hidden {
                 display: none;
               }
+              /*アコーディオンメニューの十字*/
+              #check1:hover ~ .open span::after {
+                opacity: 0;
+                transition: 0.1s;
+              }
 
               .open {
                 display: flex;
@@ -238,6 +244,43 @@ html {
                 transition: 0.7s; /*これで変化速度を変える*/
                 white-space: nowrap;
                 background-color: #fff;
+                position: relative; /*追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加追加*/
+
+                @media screen and (max-width: 1180px) {
+                  span {
+                    display: flex;
+                    justify-content: center;
+                    height: 46px;
+                    width: 46px;
+                    position: absolute;
+                    top: 0;
+                    right: 2px;
+                    // background-color: rgb(240, 110, 110);
+                  }
+
+                  span:before,
+                  span:after {
+                    content: "";
+                    display: block;
+                    height: 1.5px; /*横棒の高さ*/
+                    width: 24px; /*横棒の幅*/
+                    border-radius: 0px;
+                    background-color: #000;
+                    // top: 12.5px;
+                    position: absolute;
+                    transform: rotate(0);
+                    transition: 0.3s;
+                  }
+                  span:before {
+                    bottom: 22px;
+                    // background-color: yellow;
+                  }
+                  span:after {
+                    top: 23px;
+                    transform: rotate(90deg);
+                    transition: 0.3s;
+                  }
+                }
 
                 /*ウィンドウ幅が狭くなるとヘッダーナビのパディングが狭くなる*/
                 @media screen and (max-width: 1245px) {
@@ -287,8 +330,6 @@ html {
                   @media screen and (max-width: 1245px) {
                     left: 132px;
                   }
-                  
-                  
                 }
                 &.al-forth {
                   left: 346px;
@@ -357,11 +398,12 @@ html {
                   padding: 0 5px 0 0;
                   top: 70px;
                   transition: top 0.3s;
+                  /*ホバーすると下の見出しを押し下げて展開するアコーディオンメニューを実現*/
+                  /*position:static;で高さを指定できるようにするのが大事*/
                   @media screen and (max-width: 1180px) {
                     height: 230px;
                     position: static;
                     visibility: visible;
-                    // background-color:  variables.$gray;
                     z-index: 500;
                     transition: 0.5s;
                     padding: 0;
@@ -374,10 +416,9 @@ html {
                   transition: top 0.3s;
 
                   @media screen and (max-width: 1180px) {
-                    height: 230px;
+                    height: 322px;
                     position: static;
                     visibility: visible;
-                    // background-color:  variables.$gray;
                     z-index: 500;
                     transition: 0.5s;
                     padding: 0;
@@ -390,11 +431,12 @@ html {
                   transition: top 0.3s;
 
                   @media screen and (max-width: 1180px) {
-                    top: 0;
-                    left: 0;
-                    position: relative;
+                    height: 92px;
+                    position: static;
+                    visibility: visible;
+                    z-index: 500;
+                    transition: 0.5s;
                     padding: 0;
-                    background-color: variables.$gray;
                   }
                 }
                 & + .al-fifth {
@@ -403,11 +445,12 @@ html {
                   top: 70px;
                   transition: top 0.3s;
                   @media screen and (max-width: 1180px) {
-                    top: 0;
-                    left: 0;
-                    position: relative;
+                    height: 92px;
+                    position: static;
+                    visibility: visible;
+                    z-index: 500;
+                    transition: 0.5s;
                     padding: 0;
-                    background-color: variables.$gray;
                   }
                 }
                 & + .al-sixth {
@@ -417,11 +460,12 @@ html {
                   transition: top 0.3s;
 
                   @media screen and (max-width: 1180px) {
-                    top: 0;
-                    left: 0;
-                    position: relative;
+                    height: 92px;
+                    position: static;
+                    visibility: visible;
+                    z-index: 500;
+                    transition: 0.5s;
                     padding: 0;
-                    background-color: variables.$gray;
                   }
                 }
               }
