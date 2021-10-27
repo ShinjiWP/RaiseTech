@@ -51,7 +51,7 @@ html {
         // align-items: center;
         background-color: white;
         z-index: 1000;
-        overflow: hidden;
+        // overflow: hidden;
 
         // @media screen and (max-width:1070px) {
         //   height: 50px;
@@ -60,6 +60,7 @@ html {
 
         .h-header {
           // display: block;
+          position: fixed;
           align-items: center;
           width: 28%;
           @media screen and(max-width:1180px) {
@@ -272,26 +273,22 @@ html {
                 position: absolute;
                 top: -500px;
                 z-index: -10;
-
-                &.al-first{
-                  @media screen and(max-width:1180px) {
-                    top: 0px;
-                  }
+                /*アコーディオンメニューを縦にしたときにリストを隠す。下でスライドして出るようにしている。*/
+                @media screen and(max-width:1180px) {
+                  position: static;
+                  height: 0;
+                  opacity: 0;
+                  transition: 0.5s;
+                  visibility: hidden;
                 }
+
                 &.al-second {
                   left: 142px;
                   @media screen and (max-width: 1245px) {
                     left: 132px;
                   }
-                  @media screen and(max-width:1180px) {
-                    bottom: 0px;
-                    left: 0;
-                  }
-                  /*ハンバーガーメニュー時のアコーディオンのトップ位置指定*/
-                  // @media screen and (max-width: 1180px) {
-                  //   top: 50px;
-                  //   left: 0;
-                  // }
+                  
+                  
                 }
                 &.al-forth {
                   left: 346px;
@@ -310,11 +307,6 @@ html {
                   left: 597px;
                   @media screen and (max-width: 1245px) {
                     left: 549px;
-                  }
-                }
-                &.al-seventh {
-                  @media screen and (max-width: 1180px) {
-                    display: hidden;
                   }
                 }
 
@@ -366,12 +358,13 @@ html {
                   top: 70px;
                   transition: top 0.3s;
                   @media screen and (max-width: 1180px) {
-                    height: auto;
-                    top: 0;
-                    position: relative;
+                    height: 230px;
+                    position: static;
+                    visibility: visible;
+                    // background-color:  variables.$gray;
+                    z-index: 500;
+                    transition: 0.5s;
                     padding: 0;
-                    background-color: variables.$gray;
-                    // height: 230px;
                   }
                 }
                 & + .al-second {
@@ -381,11 +374,13 @@ html {
                   transition: top 0.3s;
 
                   @media screen and (max-width: 1180px) {
-                    top: 0;
-                    left: 0;
-                    position: relative;
+                    height: 230px;
+                    position: static;
+                    visibility: visible;
+                    // background-color:  variables.$gray;
+                    z-index: 500;
+                    transition: 0.5s;
                     padding: 0;
-                    background-color: variables.$gray;
                   }
                 }
                 & + .al-forth {
