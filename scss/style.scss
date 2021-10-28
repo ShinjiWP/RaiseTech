@@ -132,7 +132,7 @@ html {
           .h-accordion {
             display: flex;
             width: 100%;
-            height: 100%;
+            // height: 100%;
             justify-content: flex-end;
             position: fixed;
             z-index: 10;
@@ -227,7 +227,23 @@ html {
                 display: none;
               }
               /*アコーディオンメニューの十字*/
-              #check1:hover ~ .open span::after {
+              #check1:hover ~ .open .icon1::after {
+                opacity: 0;
+                transition: 0.1s;
+              }
+              #check2:hover ~ .open .icon2::after {
+                opacity: 0;
+                transition: 0.1s;
+              }
+              #check4:hover ~ .open .icon4::after {
+                opacity: 0;
+                transition: 0.1s;
+              }
+              #check5:hover ~ .open .icon5::after {
+                opacity: 0;
+                transition: 0.1s;
+              }
+              #check6:hover ~ .open .icon6::after {
                 opacity: 0;
                 transition: 0.1s;
               }
@@ -262,7 +278,7 @@ html {
                   span:after {
                     content: "";
                     display: block;
-                    height: 1.5px; /*横棒の高さ*/
+                    height: 1px; /*横棒の高さ*/
                     width: 24px; /*横棒の幅*/
                     border-radius: 0px;
                     background-color: #000;

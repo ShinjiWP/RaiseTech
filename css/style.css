@@ -115,7 +115,6 @@ html body .header .header-flex .header-nav .h-accordion {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 100%;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -235,7 +234,27 @@ html body .header .header-flex .header-nav .h-accordion .box {
 html body .header .header-flex .header-nav .h-accordion .box .hidden {
   display: none;
 }
-html body .header .header-flex .header-nav .h-accordion .box #check1:hover ~ .open span::after {
+html body .header .header-flex .header-nav .h-accordion .box #check1:hover ~ .open .icon1::after {
+  opacity: 0;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+html body .header .header-flex .header-nav .h-accordion .box #check2:hover ~ .open .icon2::after {
+  opacity: 0;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+html body .header .header-flex .header-nav .h-accordion .box #check4:hover ~ .open .icon4::after {
+  opacity: 0;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+html body .header .header-flex .header-nav .h-accordion .box #check5:hover ~ .open .icon5::after {
+  opacity: 0;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+html body .header .header-flex .header-nav .h-accordion .box #check6:hover ~ .open .icon6::after {
   opacity: 0;
   -webkit-transition: 0.1s;
   transition: 0.1s;
@@ -280,7 +299,7 @@ html body .header .header-flex .header-nav .h-accordion .box .open {
 html body .header .header-flex .header-nav .h-accordion .box .open span:after {
     content: "";
     display: block;
-    height: 1.5px;
+    height: 1px;
     /*横棒の高さ*/
     width: 24px;
     /*横棒の幅*/
