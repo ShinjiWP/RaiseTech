@@ -561,7 +561,7 @@ html {
           align-items: center;
           position: absolute;
           width: 414px;
-          height: 327.5px;
+          height: auto;
           background-color: #fff;
           z-index: 8;
           top: 150px;
@@ -572,6 +572,7 @@ html {
           display: flex;
           flex-direction: column;
           text-align: center;
+          // transition: 0.5s;
           @media screen and(max-width:1180px) {
             top: 130px;
           }
@@ -596,6 +597,7 @@ html {
             font-weight: 700;
             line-height: 1.7;
             margin-top: 16px;
+            // margin-bottom: -29px;
             @media screen and(max-width:760px) {
               font-size: 1.3rem;
               margin-top: 15px;
@@ -608,13 +610,17 @@ html {
             height: 67px;
             line-height: 67px;
             border-radius: 3px;
-            margin-top: 29px;
+            margin-top: 40px;/*ここと下のmargin-top揃えたら出来た。何故かは理解できていない*/
+            margin-bottom: 27px;
+            transition: 0.5s;
+
             @media screen and(max-width:760px) {
               width: 230px;
               height: 41px;
               line-height: 41px;
-              margin-top: 14px;
+              margin-top: 40px;
               border-radius: 6px;
+              // transition: 0.5s;
             }
             a {
               font-size: 1.8rem;
@@ -624,7 +630,6 @@ html {
               font-weight: 700;
               @media screen and(max-width:760px) {
                 font-size: 1.6rem;
-                vertical-align: top;
               }
             }
           }
@@ -700,6 +705,7 @@ html {
     .black {
       background-color: black;
       width: 100%;
+      max-width: 1980px;
       height: 1400px;
       position: absolute;
       z-index: 10;

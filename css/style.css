@@ -630,7 +630,7 @@ html body .article .top-circle-box {
           align-items: center;
   position: absolute;
   width: 414px;
-  height: 327.5px;
+  height: auto;
   background-color: #fff;
   z-index: 8;
   top: 150px;
@@ -687,14 +687,18 @@ html body .article .top-circle-box .button {
   height: 67px;
   line-height: 67px;
   border-radius: 3px;
-  margin-top: 29px;
+  margin-top: 40px;
+  /*ここと下のmargin-top揃えたら出来た。何故かは理解できていない*/
+  margin-bottom: 27px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 @media screen and (max-width: 760px) {
   html body .article .top-circle-box .button {
     width: 230px;
     height: 41px;
     line-height: 41px;
-    margin-top: 14px;
+    margin-top: 40px;
     border-radius: 6px;
   }
 }
@@ -708,7 +712,6 @@ html body .article .top-circle-box .button a {
 @media screen and (max-width: 760px) {
   html body .article .top-circle-box .button a {
     font-size: 1.6rem;
-    vertical-align: top;
   }
 }
 html body .article .top-circle .second-circle {
@@ -789,6 +792,7 @@ html body .article .top-circle .second-circle-icon .description {
 html body .black {
   background-color: black;
   width: 100%;
+  max-width: 1980px;
   height: 1400px;
   position: absolute;
   z-index: 10;
