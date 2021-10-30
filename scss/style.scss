@@ -553,25 +553,39 @@ html {
       /*中心のボックス*/
       .top-circle {
         z-index: 100;
+        width: 100%;
+        height: 450px;
+        position: absolute;
+        top: 70px;
+        padding: 80px 0 0 0;
+        @media screen and(max-width:1180px) {
+          top: 50px;
+        }
+        @media screen and(max-width:760px) {
+          height: 320px;
+          display: flex;
+          margin: 0;
+          align-items: flex-end;
+        }
 
         // justify-content: center;
 
         &-box {
           display: flex;
           align-items: center;
-          position: absolute;
+          // position: absolute;
+          // top: 150px;
+          // left: 0;
+          // right: 0;
           width: 414px;
           height: auto;
           background-color: #fff;
-          z-index: 8;
-          top: 150px;
-          left: 0;
-          right: 0;
+          // z-index: 8;
           margin: auto;
           border-radius: 10px;
           flex-direction: column;
           text-align: center;
-          padding: 43px 40px 19px;
+          padding: 43px 40px 12px;
           @media screen and(max-width:1180px) {
             top: 130px;
           }
@@ -579,10 +593,11 @@ html {
           @media screen and(max-width:760px) {
             width: 100%;
             height: auto;
-            top: 215px;
+            // top: 215px;
             border-radius: 0;
             padding: 0;
             justify-content: flex-end;
+            margin: 0;
             // transition: 0.5s;
           }
 
@@ -639,7 +654,7 @@ html {
         .second-circle {
           width: 93%;
           height: 50%;
-          top: 521px;
+          top: 451px;
           left: 0px; /*position:absolute;を使用した画面中央配置の呪文3点セット*/
           right: 0; /*position:absolute;を使用した画面中央配置の呪文3点セット*/
           margin: auto; /*position:absolute;を使用した画面中央配置の呪文3点セット*/
@@ -648,12 +663,13 @@ html {
           display: flex;
           justify-content: center;
           @media screen and(max-width:1180px) {
-            top: 501px;
+            top: 451px;
+            height: 400px;
           }
 
           @media screen and(max-width:760px) {
             display: block;
-            top: 435px;
+            top: 385px;
           }
 
           &-icon {
