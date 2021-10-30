@@ -633,14 +633,14 @@ html body .article .top-circle {
 }
 @media screen and (max-width: 760px) {
   html body .article .top-circle {
-    height: 300px;
+    height: 320px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     margin: 0;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
 }
 html body .article .top-circle-box {
